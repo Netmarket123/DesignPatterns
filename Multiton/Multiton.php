@@ -1,4 +1,11 @@
 <?php
+/**
+ * Created by JetBrains PhpStorm.
+ * User: dominik
+ * Date: 21.08.11
+ * Time: 15:28
+ * To change this template use File | Settings | File Templates.
+ */
 
 namespace DesignPatterns;
 
@@ -46,7 +53,6 @@ class Multiton
 
     /**
      * gets the instance with the given name, e.g. Multiton::INSTANCE_1
-     * uses lazy initialization
      * 
      * @param string $instanceName
      * @return Multiton
