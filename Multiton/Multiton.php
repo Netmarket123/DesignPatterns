@@ -46,7 +46,6 @@ class Multiton
 
     /**
      * gets the instance with the given name, e.g. Multiton::INSTANCE_1
-     * uses lazy initialization
      * 
      * @param string $instanceName
      * @return Multiton

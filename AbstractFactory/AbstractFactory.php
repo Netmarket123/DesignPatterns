@@ -10,10 +10,11 @@ namespace DesignPatterns;
  * usually the created classes all implement the same interface
  *
  * Examples:
- * - A factory to create media in a CMS: classes would be text, audio, video, picture
- * - SQL factory (types are all strings with SQL, but they vary in detail (tables, fields, etc.))
- * - Zend Framework: Zend_Form::createElement() creates form elements, but you could also call
- *   new TextElement() instead
+ * - A Factory to create media in a CMS: classes would be text, audio, video, picture
+ * - SQL Factory (types are all strings with SQL, but they vary in detail (tables, fields, etc.))
+ * - Zend Framework: Zend_Form::createElement() creates form elements, but you could also call new T
+ *   TextElement() instead
+ * - an abstract factory to create various exceptions (e.g. Doctrine2 uses this method)
  *
  */
 abstract class AbstractFactory
