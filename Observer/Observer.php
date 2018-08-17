@@ -25,8 +25,6 @@ class UserObserver implements \SplObserver
 
 class User implements \SplSubject
 {
-    protected $_data = array();
-
     /**
      * @var array
      */
@@ -69,21 +67,5 @@ class User implements \SplSubject
         foreach ($this->_observers as $observer) {
             $observer->update($this);
         }
-    }
-
-    /**
-     * Ideally one would better write setter/getter for all valid attributes and only call notify()
-     * on attributes that matter when changed
-     *
-     * @param $name
-     * @param $value
-     * @return void
-     */
-    public function __set($name, $value)
-    {
-        $this->_data[$name] = $value;
-
-        // notify the observers, that user has been updated
-        $this->notify();
     }
 }
