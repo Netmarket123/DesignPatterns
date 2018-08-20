@@ -55,7 +55,7 @@ class RecordProxy extends Record
     /**
      * @var bool
      */
-    protected $_isDirty = false;
+    protected $_isDirrty = false;
 
     /**
      * @var bool
@@ -75,7 +75,7 @@ class RecordProxy extends Record
         // that extends the Record class
         if (null !== $data) {
             $this->_isInitialized = true;
-            $this->_isDirty = true;
+            $this->_isDirrty = true;
         }
     }
 
@@ -88,7 +88,7 @@ class RecordProxy extends Record
      */
     public function __set($name, $value)
     {
-        $this->_isDirty = true;
+        $this->_isDirrty = true;
         parent::__set($name, $value);
     }
 }

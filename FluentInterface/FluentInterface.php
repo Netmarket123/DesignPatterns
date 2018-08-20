@@ -11,7 +11,6 @@ namespace DesignPatterns;
  * Examples:
  * - Doctrine2's QueryBuilder works something like that example class below
  * - PHPUnit uses fluent interfaces to build mock objects
- * - Yii Framework: CDbCommand and CActiveRecord use this pattern too
  *
  */
 class SQL
