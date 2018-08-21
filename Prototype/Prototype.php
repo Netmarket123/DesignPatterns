@@ -21,7 +21,7 @@ abstract class BookPrototype
      * @abstract
      * @return void
      */
-    abstract public function __clone();
+    abstract function __clone();
 
     public function getTitle()
     {
