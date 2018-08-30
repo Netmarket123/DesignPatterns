@@ -1,54 +1,49 @@
 <?php
 
-/*
- * DesignPatternPHP
- */
-
-namespace DesignPatterns\FactoryMethod;
+namespace DesignPatterns;
 
 /**
- * FactoryMethod is a factory method. The good point over the SimpleFactory
- * is you can subclass it to implement different way to create vehicle for
- * each country (see subclasses)
+ * Factory Method pattern
+ *
+ * Purpose:
+ * similar to the AbstractFactory, this pattern is used to create series of related or dependant objects.
+ * The difference between this and the abstract factory pattern is that the factory method pattern uses just one static
+ * method to create all types of objects it can create. It is usually named "factory" or "build".
+ *
+ * Examples:
+ * - Zend Framework: Zend_Cache_Backend or _Frontend use a factory method create cache backends or frontends
  * 
- * For simple case, this abstract class could be just an interface
- * 
- * This pattern is a "real" Design Pattern because it achieves the
- * "Dependency Inversion Principle" a.k.a the "D" in S.O.L.I.D principles.
- * 
- * It means the FactoryMethod class depends on abstractions not concrete classes.
- * This is the real trick compared to SImpleFactory or StaticFactory.
  */
-abstract class FactoryMethod
+class FactoryMethod
+{
+    /**
+     * the parametrized function to get create an instance
+     *
+     * @static
+     * @return Formatter
+     */
+    public static function factory($type)
+    {
+        $className = 'Format' . ucfirst($type);
+        if ( ! class_exists($className)) {
+            throw new Exception('Missing format class.');
+        }
+
+        return new $className();
+    }
+}
+
+interface Formatter
 {
 
-    const CHEAP = 1;
-    const FAST = 2;
+}
 
-    /**
-     * The children of the class must implement this method
-     * 
-     * Sometimes this method can be public to get "raw" object
-     * 
-     * @param string $type a generic type
-     * 
-     * @return Vehicle a new vehicle
-     */
-    abstract protected function createVehicle($type);
+class FormatString implements Formatter
+{
 
-    /**
-     * Creates a new vehicle
-     * 
-     * @param int $type
-     * 
-     * @return Vehicle a new vehicle
-     */
-    public function create($type)
-    {
-        $obj = $this->createVehicle($type);
-        $obj->setColor("#f00");
+}
 
-        return $obj;
-    }
-
+class FormatNumber implements Formatter
+{
+    
 }
