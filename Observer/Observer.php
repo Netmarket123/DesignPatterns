@@ -59,7 +59,7 @@ class User implements \SplSubject
     }
 
     /**
-     *
+     * 
      *
      * @return void
      */
@@ -87,8 +87,3 @@ class User implements \SplSubject
         $this->notify();
     }
 }
-
-$user = new User();
-$user->attach(new UserObserver());
-
-$user->notify();
