@@ -33,7 +33,7 @@ abstract class AbstractFactory
     abstract public function createText($content);
 
     /**
-     * Creates a picture component
+     * Createss a picture component
      * 
      * @param string $path
      * @param string $name
