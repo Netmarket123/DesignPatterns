@@ -1,6 +1,6 @@
 <?php
 
-namespace DesignPatterns;
+namespace DesignPatterns\DataMapper;
 
 /**
  * DataMapper pattern
@@ -16,73 +16,76 @@ namespace DesignPatterns;
  * entity types, dedicated mappers will handle one or a few.
  * (FROM http://en.wikipedia.org/wiki/Data_mapper_pattern)
  *
+ * The key point of this pattern is, unlike Active Record pattern, the datamodel
+ * follows Single Responsibility Principle.
  *
  * Examples:
- * - DB Object Relational Mapper (ORM)
+ * - DB Object Relational Mapper (ORM) : Doctrine2 uses DAO named as "EntityRepository"
  *
  */
 class UserMapper
 {
+    /**
+     * @var DBAL
+     */
+    protected $adapter;
 
-    protected $_adapter;
-
-    public function __construct(array $options = null)
+    /**
+     * @param DBAL $dbLayer
+     */
+    public function __construct(DBAL $dbLayer)
     {
-        /**
-         * create new Database connector on $_adapter using specific table
-         *
-         * $_adapter var could be a specific to a table class or a generic 
-         * interface for connecting to Database and do certain jobs
-         */
+        $this->adapter = $dbLayer;
     }
 
     /**
      * saves a user object from memory to Database
      *
+     * @param User $user
+     *
      * @return boolean
      */
     public function save(User $user)
     {
-        /* $data keys shoulds correspond to valid Table columns on the Database */
+        /* $data keys should correspond to valid Table columns on the Database */
         $data = array(
             'userid'   => $user->getUserId(),
             'username' => $user->getUsername(),
-            'email'   => $user->getEmail(),
+            'email'    => $user->getEmail(),
         );
 
         /* if no ID specified create new user else update the one in the Database */
         if (null === ($id = $user->getUserId())) {
             unset($data['userid']);
-            $this->_adapter->insert($data);
+            $this->adapter->insert($data);
+
             return true;
         } else {
-            $this->_adapter->update($data, array('userid = ?' => $id));
+            $this->adapter->update($data, array('userid = ?' => $id));
+
             return true;
         }
-
-        return false;
     }
 
     /**
      * finds a user from Database based on ID and returns a User object located
      * in memory
      *
+     * @param int $id
+     *
+     * @throws \InvalidArgumentException
      * @return User
      */
     public function findById($id)
     {
-        $result = $this->_adapter->find($id);
+        $result = $this->adapter->find($id);
+
         if (0 == count($result)) {
-            return;
+            throw new \InvalidArgumentException("User #$id not found");
         }
         $row = $result->current();
 
-        var user = new User();
-        $user->setUserID($row['userid']);
-        $user->setUsername($row['username']);
-        $user->setEmail($row['email']);
-
-        return user;
+        return $this->mapObject($row);
     }
 
     /**
@@ -93,19 +96,30 @@ class UserMapper
      */
     public function findAll()
     {
-        $resultSet = $this->_adapter->findAll();
+        $resultSet = $this->adapter->findAll();
         $entries   = array();
 
         foreach ($resultSet as $row) {
-
-            $entry = new User();
-            $user->setUserID($row['userid']);
-            $user->setUsername($row['username']);
-            $user->setEmail($row['email']);
-
-            $entries[] = $entry;
+            $entries[] = $this->mapObject($row);
         }
 
         return $entries;
+    }
+
+    /**
+     * Maps a table row to an object
+     *
+     * @param array $row
+     *
+     * @return User
+     */
+    protected function mapObject(array $row)
+    {
+        $entry = new User();
+        $entry->setUserID($row['userid']);
+        $entry->setUsername($row['username']);
+        $entry->setEmail($row['email']);
+
+        return $entry;
     }
 }

@@ -1,9 +1,13 @@
 <?php
 
-namespace DesignPatterns;
+namespace DesignPatterns\Singleton;
 
 /**
  * Singleton pattern
+ *
+ * --------------------------------------------------------------------------------------------------------------
+ * THIS IS CONSIDERED TO BE AN ANTI-PATTERN! FOR BETTER TESTABILITY AND MAINTAINABILITY USE DEPENDENCY INJECTION!
+ * -------------------------------------------------------------------------------------------------------------- 
  *
  * Purpose:
  * to have only one instance of this object in the application that will handle all calls
@@ -12,15 +16,9 @@ namespace DesignPatterns;
  * - DB Connector
  * - Logger (may also be a Multiton if there are many log files for several purposes)
  * - Lock file for the application (there is only one in the filesystem ...)
- *
  */
 class Singleton
 {
-    /**
-     * @var cached reference to singleton instance 
-     */
-    protected static $instance;
-    
     /**
      * gets the instance via lazy initialization (created on first usage)
      *
@@ -28,12 +26,13 @@ class Singleton
      */
     public static function getInstance()
     {
-        
-        if (null === static::$instance) {
-            static::$instance = new static;
+        static $instance;
+
+        if (null === $instance) {
+            $instance = new self();
         }
 
-        return static::$instance;
+        return $instance;
     }
 
     /**
@@ -41,7 +40,9 @@ class Singleton
      *
      */
     private function __construct()
-    {}
+    {
+
+    }
 
     /**
      * prevent the instance from being cloned
@@ -49,7 +50,9 @@ class Singleton
      * @return void
      */
     private function __clone()
-    {}
+    {
+
+    }
 
     /**
      * prevent from being unserialized
@@ -57,5 +60,7 @@ class Singleton
      * @return void
      */
     private function __wakeup()
-    {}
+    {
+
+    }
 }

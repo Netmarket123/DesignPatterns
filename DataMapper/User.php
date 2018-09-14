@@ -1,48 +1,89 @@
 <?php
 
-namespace DesignPatterns;
+namespace DesignPatterns\DataMapper;
 
 /**
  * DataMapper pattern
  *
- * This is our representation of a DataBase record in the memory
+ * This is our representation of a DataBase record in the memory (Entity)
+ *
+ * Validation would also go in this object
  *
  */
 class User
 {
-	protected $userId;
+    /**
+     * @var int
+     */
+    protected $userId;
+
+    /**
+     * @var string
+     */
     protected $username;
+
+    /**
+     * @var string
+     */
     protected $email;
 
-	public function __construct($id, $username, $email)
+    /**
+     * @param null $id
+     * @param null $username
+     * @param null $email
+     */
+    public function __construct($id = null, $username = null, $email = null)
     {
-        $this->id = $id;
+        $this->userId = $id;
         $this->username = $username;
         $this->email = $email;
     }
 
-	public function getUserId() {
-		return $this->userId;
-	}
+    /**
+     * @return int
+     */
+    public function getUserId()
+    {
+        return $this->userId;
+    }
 
-	public function setUserID($userId) {
-		$this->userId = $userId;
-	}
+    /**
+     * @param int $userId
+     */
+    public function setUserID($userId)
+    {
+        $this->userId = $userId;
+    }
 
-	public function getUsername() {
-		return $this->username;
-	}
+    /**
+     * @return string
+     */
+    public function getUsername()
+    {
+        return $this->username;
+    }
 
-	public function setUsername($username) {
-		$this->username = $username;
-	}
+    /**
+     * @param string $username
+     */
+    public function setUsername($username)
+    {
+        $this->username = $username;
+    }
 
-	public function getEmail() {
-		return $this->email;
-	}
+    /**
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
 
-	public function setEmail($email) {
-		$this->email = $email;
-	}
-
+    /**
+     * @param string $email
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+    }
 }
