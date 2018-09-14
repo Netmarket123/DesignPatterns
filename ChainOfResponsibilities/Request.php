@@ -1,5 +1,9 @@
 <?php
 
+/*
+ * DesignPatternPHP
+ */
+
 namespace DesignPatterns\ChainOfResponsibilities;
 
 /**

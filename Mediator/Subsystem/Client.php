@@ -1,5 +1,9 @@
 <?php
 
+/*
+ * DesignPatternPHP
+ */
+
 namespace DesignPatterns\Mediator\Subsystem;
 
 use DesignPatterns\Mediator\Colleague;
@@ -9,21 +13,15 @@ use DesignPatterns\Mediator\Colleague;
  */
 class Client extends Colleague
 {
-    /**
-     * request
-     */
+
     public function request()
     {
         $this->getMediator()->makeRequest();
     }
 
-    /**
-     * output content
-     *
-     * @param string $content
-     */
     public function output($content)
     {
         echo $content;
     }
+
 }

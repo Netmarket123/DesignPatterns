@@ -8,7 +8,7 @@ namespace DesignPatterns\AbstractFactory;
  * Purpose:
  * to create series of related or dependant objects without specifying their concrete classes,
  * usually the created classes all implement the same interface. The client of the abstract
- * factory does not care about how these objects are created, he just knows they go together.
+ * factory does not care about how these objects are created, he just knows they goes together.
  * 
  * Sometimes also known as "Kit" in a GUI libraries. 
  * 
@@ -28,17 +28,15 @@ abstract class AbstractFactory
      * Creates a text component
      * 
      * @param string $content
-     *
      * @return Text
      */
     abstract public function createText($content);
 
     /**
-     * Creates a picture component
+     * Createss a picture component
      * 
      * @param string $path
      * @param string $name
-     *
      * @return Picture
      */
     abstract public function createPicture($path, $name = '');

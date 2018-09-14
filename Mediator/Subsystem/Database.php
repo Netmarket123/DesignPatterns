@@ -1,5 +1,9 @@
 <?php
 
+/*
+ * DesignPatternPHP
+ */
+
 namespace DesignPatterns\Mediator\Subsystem;
 
 use DesignPatterns\Mediator\Colleague;
@@ -9,11 +13,10 @@ use DesignPatterns\Mediator\Colleague;
  */
 class Database extends Colleague
 {
-    /**
-     * @return string
-     */
+
     public function getData()
     {
         return "World";
     }
+
 }

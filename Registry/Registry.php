@@ -14,46 +14,38 @@ namespace DesignPatterns;
  * - Yii Framework: CWebApplication holds all the application components, such as CWebUser, CUrlManager, etc.
  *
  */
+
 abstract class Registry
 {
     const LOGGER = 'logger';
 
-    /**
-     * @var array
-     */
-    protected static $storedValues = array();
+    protected static $_storedValues;
 
     /**
-     * sets a value
-     *
-     * @param string $key
-     * @param mixed  $value
-     *
      * @static
+     * @param string $key
+     * @param mixed $value
      * @return void
      */
     public static function set($key, $value)
     {
-        self::$storedValues[$key] = $value;
+        self::$_storedValues[$key] = $value;
     }
 
     /**
-     * gets a value from the registry
-     *
-     * @param string $key
-     *
      * @static
+     * @param string $key
      * @return mixed
      */
     public static function get($key)
     {
-        return self::$storedValues[$key];
+        return self::$_storedValues[$key];
     }
 
     // typically there would be methods to check if a key has already been registered and so on ...
 }
 
-// while bootstrapping the application
+// while bootstraping the application
 Registry::set(Registry::LOGGER, new \StdClass());
 
 // throughout the application

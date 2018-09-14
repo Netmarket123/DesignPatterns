@@ -2,10 +2,7 @@
 
 namespace DesignPatterns\StaticFactory;
 
-/**
- * Class FormatNumber
- */
-class FormatNumber implements FormatterInterface
+class FormatNumber implements Formatter
 {
-
+    
 }

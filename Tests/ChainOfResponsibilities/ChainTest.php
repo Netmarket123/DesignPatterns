@@ -1,5 +1,9 @@
 <?php
 
+/*
+ * DesignPatternPHP
+ */
+
 namespace DesignPatterns\Tests\ChainOfResponsibilities;
 
 use DesignPatterns\ChainOfResponsibilities\Request;
@@ -70,4 +74,5 @@ class ChainTest extends \PHPUnit_Framework_TestCase
         // the last rsponsible :
         $this->assertEquals('DesignPatterns\ChainOfResponsibilities\Responsible\SlowStorage', $request->forDebugOnly);
     }
+
 }

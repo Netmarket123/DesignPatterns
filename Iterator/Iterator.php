@@ -21,50 +21,32 @@ namespace DesignPatterns;
  */
 class File
 {
-    /**
-     * @var RowSet
-     */
-    protected $rowSet;
+    protected $_rowset;
 
-    /**
-     * @var string
-     */
-    protected $pathName;
+    protected $_pathName;
 
-    /**
-     * @param string $pathName
-     */
     public function __construct($pathName)
     {
-        $this->rowSet = new Rowset($this);
+        $this->_rowset = new Rowset($this);
     }
 
     public function process()
     {
         // this is the place to show how using an iterator, with foreach
         // See the CardGame.php file
-        $this->rowSet->process();
+        $this->_rowset->process();
     }
 }
 
 class Rowset implements \Iterator
 {
-    /**
-     * @var
-     */
-    protected $currentRow;
+    protected $_currentRow;
 
-    /**
-     * @var string
-     */
-    protected $file;
+    protected $_file;
 
-    /**
-     * @param string $file
-     */
     public function __construct($file)
     {
-        $this->file = $file;
+        $this->_file = $file;
     }
 
     /**
@@ -90,28 +72,28 @@ class Rowset implements \Iterator
 
     public function rewind()
     {
-        // seek to first line from $this->file
+        // seek to first line from $this->_file
     }
 
     public function next()
     {
-        // read the next line from $this->file
+        // read the next line from $this->_file
         if (!$eof) {
             $data = ''; // get the line
-            $this->currentRow = new Row($data);
+            $this->_currentRow = new Row($data);
         } else {
-            $this->currentRow = null;
+            $this->_currentRow = null;
         }
     }
 
     public function current()
     {
-        return $this->currentRow;
+        return $this->_currentRow;
     }
 
     public function valid()
     {
-        return null !== $this->currentRow;
+        return null !== $this->_currentRow;
     }
 
     public function key()

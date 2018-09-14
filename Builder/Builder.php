@@ -1,5 +1,9 @@
 <?php
 
+/*
+ * DesignPatternPHP
+ */
+
 namespace DesignPatterns\Builder;
 
 /**
@@ -16,28 +20,14 @@ namespace DesignPatterns\Builder;
  */
 interface Builder
 {
-    /**
-     * @return mixed
-     */
-    public function createVehicle();
 
-    /**
-     * @return mixed
-     */
-    public function addWheel();
+    function createVehicle();
 
-    /**
-     * @return mixed
-     */
-    public function addEngine();
+    function addWheel();
 
-    /**
-     * @return mixed
-     */
-    public function addDoors();
+    function addEngine();
 
-    /**
-     * @return mixed
-     */
-    public function getVehicle();
+    function addDoors();
+
+    function getVehicle();
 }

@@ -1,5 +1,9 @@
 <?php
 
+/*
+ * DesignPatternPHP
+ */
+
 namespace DesignPatterns\Tests\Builder;
 
 use DesignPatterns\Builder\Director;
@@ -38,4 +42,5 @@ class DirectorTest extends \PHPUnit_Framework_TestCase
         $newVehicle = $this->director->build($builder);
         $this->assertInstanceOf('DesignPatterns\Builder\Parts\Vehicle', $newVehicle);
     }
+
 }

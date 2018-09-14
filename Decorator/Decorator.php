@@ -16,25 +16,24 @@ namespace DesignPatterns\Decorator;
  */
 
 /**
- * the Deoorator MUST implement the RendererInterface contract, this is the key-feature
+ * the Deoorator MUST implement the Renderer contract, this is the key-feature
  * of this design pattern. If not, this is no longer a Decorator but just a dumb
  * wrapper.
  */
-abstract class Decorator implements RendererInterface
+abstract class Decorator implements Renderer
 {
-    /**
-     * @var RendererInterface
-     */
-    protected $wrapped;
+
+    protected $_wrapped;
 
     /**
      * You must type-hint the wrapped component :
      * It ensures you can call renderData() in the subclasses !
      * 
-     * @param RendererInterface $wrappable
+     * @param Renderer $wrappable
      */
-    public function __construct(RendererInterface $wrappable)
+    public function __construct(Renderer $wrappable)
     {
-        $this->wrapped = $wrappable;
+        $this->_wrapped = $wrappable;
     }
 }
+

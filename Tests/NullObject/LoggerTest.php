@@ -1,5 +1,9 @@
 <?php
 
+/*
+ * DesignPatternPHP
+ */
+
 namespace DesignPatterns\Tests\NullObject;
 
 use DesignPatterns\NullObject\NullLogger;
@@ -27,4 +31,5 @@ class LoggerTest extends \PHPUnit_Framework_TestCase
         $this->expectOutputString('We are in DesignPatterns\NullObject\Service::doSomething');
         $service->doSomething();
     }
+
 }

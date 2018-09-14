@@ -1,5 +1,9 @@
 <?php
 
+/*
+ * DesignPatternPHP
+ */
+
 namespace DesignPatterns\Builder\Parts;
 
 /**
@@ -7,5 +11,5 @@ namespace DesignPatterns\Builder\Parts;
  */
 class Car extends Vehicle
 {
-
+    
 }

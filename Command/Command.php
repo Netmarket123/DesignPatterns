@@ -23,8 +23,9 @@ namespace DesignPatterns\Command;
  *   can be implemented with the Command pattern (e.g. vagrant)
  *
  */
-interface CommandInterface
+interface Command
 {
+
     /**
      * this is the most important method in the Command pattern,
      * The Receiver goes in the constructor.

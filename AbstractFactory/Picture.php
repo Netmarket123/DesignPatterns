@@ -2,29 +2,19 @@
 
 namespace DesignPatterns\AbstractFactory;
 
-/**
- * Class Picture
- */
-abstract class Picture implements MediaInterface
+abstract class Picture implements Media
 {
+    protected $_path;
+    protected $_name;
 
     /**
-     * @var string
-     */
-    protected $path;
-
-    /**
-     * @var string
-     */
-    protected $name;
-
-    /**
+     *
      * @param string $path
      * @param string $name
      */
     public function __construct($path, $name = '')
     {
-        $this->name = (string) $name;
-        $this->path = (string) $path;
+        $this->_name = (string) $name;
+        $this->_path = (string) $path;
     }
 }

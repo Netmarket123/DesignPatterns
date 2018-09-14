@@ -1,5 +1,9 @@
 <?php
 
+/*
+ * DesignPatternPHP
+ */
+
 namespace DesignPatterns\Mediator;
 
 /**
@@ -8,20 +12,10 @@ namespace DesignPatterns\Mediator;
  */
 interface MediatorInterface
 {
-    /**
-     * sends the response
-     *
-     * @param string $content
-     */
-    public function sendResponse($content);
 
-    /**
-     * makes a request
-     */
-    public function makeRequest();
+    function sendResponse($content);
 
-    /**
-     * queries the DB
-     */
-    public function queryDb();
+    function makeRequest();
+
+    function queryDb();
 }

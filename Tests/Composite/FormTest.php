@@ -1,5 +1,9 @@
 <?php
 
+/*
+ * DesignPatternPHP
+ */
+
 namespace DesignPatterns\Test\Composite;
 
 use DesignPatterns\Composite;
@@ -31,4 +35,5 @@ class FormTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertTrue(is_subclass_of('DesignPatterns\Composite\Form', 'DesignPatterns\Composite\FormElement'));
     }
+
 }

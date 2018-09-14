@@ -1,25 +1,27 @@
 <?php
 
+/*
+ * DesignPatternPHP
+ */
+
 namespace DesignPatterns\Adapter;
 
 /**
  * Kindle is a concrete electronic book
+ *
+ * @author flo
  */
-class Kindle implements EBookInterface
+class Kindle implements ElecBookInterface
 {
-    /**
-     * {@inheritdoc}
-     */
+
     public function pressNext()
     {
-
+        
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function pressStart()
     {
-
+        
     }
+
 }

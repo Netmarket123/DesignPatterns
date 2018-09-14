@@ -25,6 +25,7 @@ class StaticFactoryTest extends \PHPUnit_Framework_TestCase
     public function testCreation($type)
     {
         $obj = StaticFactory::factory($type);
-        $this->assertInstanceOf('DesignPatterns\StaticFactory\FormatterInterface', $obj);
+        $this->assertInstanceOf('DesignPatterns\StaticFactory\Formatter', $obj);
     }
+
 }

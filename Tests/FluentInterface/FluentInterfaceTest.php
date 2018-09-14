@@ -1,5 +1,9 @@
 <?php
 
+/*
+ * DesignPatternPHP
+ */
+
 namespace DesignPatterns\Tests\FluentInterface;
 
 use DesignPatterns\FluentInterface\SQL;
@@ -20,4 +24,5 @@ class FluentInterfaceTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals('SELECT foo,bar FROM foobar AS f WHERE f.bar = ?', $query);
     }
+
 }

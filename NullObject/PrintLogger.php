@@ -1,5 +1,9 @@
 <?php
 
+/*
+ * DesignPatternPHP
+ */
+
 namespace DesignPatterns\NullObject;
 
 /**
@@ -7,11 +11,10 @@ namespace DesignPatterns\NullObject;
  */
 class PrintLogger implements LoggerInterface
 {
-    /**
-     * @param string $str
-     */
+
     public function log($str)
     {
         echo $str;
     }
+
 }

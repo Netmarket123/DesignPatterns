@@ -1,5 +1,9 @@
 <?php
 
+/*
+ * DesignPatternPHP
+ */
+
 namespace DesignPatterns\Adapter;
 
 /**
@@ -7,19 +11,15 @@ namespace DesignPatterns\Adapter;
  */
 class Book implements PaperBookInterface
 {
-    /**
-     * {@inheritdoc}
-     */
+
     public function open()
     {
-
+        
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function turnPage()
     {
-
+        
     }
+
 }

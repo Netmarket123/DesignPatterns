@@ -1,5 +1,9 @@
 <?php
 
+/*
+ * DesignPatternPHP
+ */
+
 namespace DesignPatterns\Tests\AbstractFactory;
 
 use DesignPatterns\AbstractFactory\AbstractFactory;
@@ -11,6 +15,7 @@ use DesignPatterns\AbstractFactory\JsonFactory;
  */
 class AbstractFactoryTest extends \PHPUnit_Framework_TestCase
 {
+
     public function getFactories()
     {
         return array(
@@ -34,11 +39,12 @@ class AbstractFactoryTest extends \PHPUnit_Framework_TestCase
             $factory->createText('footnotes')
         );
 
-        $this->assertContainsOnly('DesignPatterns\AbstractFactory\MediaInterface', $article);
-
+        $this->assertContainsOnly('DesignPatterns\AbstractFactory\Media', $article);
         /* this is the time to look at the Builder pattern. This pattern
          * helps you to create complex object like that article above with
          * a given Abstract Factory
          */
+        
     }
+
 }

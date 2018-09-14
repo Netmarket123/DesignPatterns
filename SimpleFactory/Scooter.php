@@ -1,17 +1,20 @@
 <?php
 
+/*
+ * DesignPatternPHP
+ */
+
 namespace DesignPatterns\SimpleFactory;
 
 /**
  * Scooter is a Scooter
  */
-class Scooter implements VehicleInterface
+class Scooter implements Vehicle
 {
-    /**
-     * @param mixed $destination
-     */
+
     public function driveTo($destination)
     {
-
+        
     }
+
 }

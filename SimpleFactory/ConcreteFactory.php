@@ -1,5 +1,9 @@
 <?php
 
+/*
+ * DesignPatternPHP
+ */
+
 namespace DesignPatterns\SimpleFactory;
 
 /**
@@ -13,9 +17,7 @@ namespace DesignPatterns\SimpleFactory;
  */
 class ConcreteFactory
 {
-    /**
-     * @var array
-     */
+
     protected $typeList;
 
     /**
@@ -34,8 +36,7 @@ class ConcreteFactory
      * Creates a vehicle
      * 
      * @param string $type a known type key
-     *
-     * @return VehicleInterface a new instance of VehicleInterface
+     * @return Vehicle a new instance of Vehicle
      * @throws \InvalidArgumentException
      */
     public function createVehicle($type)
@@ -47,4 +48,5 @@ class ConcreteFactory
 
         return new $className();
     }
+
 }

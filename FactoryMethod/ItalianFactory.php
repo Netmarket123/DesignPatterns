@@ -1,5 +1,9 @@
 <?php
 
+/*
+ * DesignPatternPHP
+ */
+
 namespace DesignPatterns\FactoryMethod;
 
 /**
@@ -7,20 +11,25 @@ namespace DesignPatterns\FactoryMethod;
  */
 class ItalianFactory extends FactoryMethod
 {
+
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     protected function createVehicle($type)
     {
         switch ($type) {
-            case parent::CHEAP:
+
+            case parent::CHEAP :
                 return new Bicycle();
                 break;
-            case parent::FAST:
+
+            case parent::FAST :
                 return new Ferrari();
                 break;
-            default:
+
+            default :
                 throw new \InvalidArgumentException("$type is not a valid vehicle");
         }
     }
+
 }

@@ -1,22 +1,20 @@
 <?php
 
+/*
+ * DesignPatternPHP
+ */
+
 namespace DesignPatterns\FactoryMethod;
 
 /**
  * Ferrari is a italian car
  */
-class Ferrari implements VehicleInterface
+class Ferrari implements Vehicle
 {
-    /**
-     * @var string
-     */
-    protected $color;
 
-    /**
-     * @param string $rgb
-     */
     public function setColor($rgb)
     {
-        $this->color = $rgb;
+        
     }
+
 }

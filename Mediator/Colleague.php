@@ -1,5 +1,9 @@
 <?php
 
+/*
+ * DesignPatternPHP
+ */
+
 namespace DesignPatterns\Mediator;
 
 /**
@@ -8,11 +12,8 @@ namespace DesignPatterns\Mediator;
  */
 abstract class Colleague
 {
-    /**
-     * this ensures no change in subclasses
-     *
-     * @var MediatorInterface
-     */
+
+    // this ensures no change in subclasses
     private $mediator;
 
     // for subclasses
@@ -21,12 +22,10 @@ abstract class Colleague
         return $this->mediator;
     }
 
-    /**
-     * @param MediatorInterface $medium
-     */
     public function __construct(MediatorInterface $medium)
     {
         // in this way, we are sure the concrete colleague knows the mediator
         $this->mediator = $medium;
     }
+
 }

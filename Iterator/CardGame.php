@@ -1,10 +1,14 @@
 <?php
 
+/*
+ * DesignPatternPHP
+ */
+
 namespace DesignPatterns\Iterator;
 
 /**
  * Iterator provides a standard way to iterate over a collection without knowing
- * how it is implemented. All you need to know is that you can traverse it
+ * how it is implemented. All you need to know is : you can traverse it
  * with current, valid, next, rewind and key.
  * 
  * That's the key feature of this pattern :
@@ -23,20 +27,12 @@ namespace DesignPatterns\Iterator;
  */
 class CardGame implements \Iterator
 {
-    /**
-     * @var array
-     */
-    protected $color = array('D', 'S', 'C', 'H');
 
-    /**
-     * @var array
-     */
+    protected $color = array('D', 'S', 'C', 'H');
     protected $number = array(7, 8, 9, 10, 'J', 'Q', 'K', 'A');
 
     /**
      * Return the current value
-     *
-     * @return string
      */
     public function current()
     {
@@ -45,8 +41,6 @@ class CardGame implements \Iterator
 
     /**
      * Return the current key
-     *
-     * @return string
      */
     public function key()
     {
@@ -77,11 +71,10 @@ class CardGame implements \Iterator
     /**
      * Is the current position a valid item (true) 
      * or do we reach the end (false) ?
-     *
-     * @return boolean
      */
     public function valid()
     {
         return current($this->number) || current($this->color);
     }
+
 }
