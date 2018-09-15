@@ -17,6 +17,6 @@ abstract class Text implements MediaInterface
      */
     public function __construct($text)
     {
-        $this->text = (string) $text;
+        $this->_text = (string) $text;
     }
 }
