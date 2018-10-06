@@ -18,7 +18,7 @@ The patterns can be structured in roughly three different categories. Please cli
 * [FactoryMethod](FactoryMethod) [:notebook:](http://en.wikipedia.org/wiki/Factory_method_pattern)
 * [StaticFactory](StaticFactory)
 * [Prototype](Prototype) [:notebook:](http://en.wikipedia.org/wiki/Prototype_pattern)
-* [Pool](Prototype) [:notebook:](http://en.wikipedia.org/wiki/Object_pool_pattern)
+* [Pool](Pool) [:notebook:](http://en.wikipedia.org/wiki/Object_pool_pattern)
 * [Singleton](Singleton) [:notebook:](http://en.wikipedia.org/wiki/Singleton_pattern) (is considered an anti-pattern! :no_entry:)
 * [Multiton](Multiton) (is considered an anti-pattern! :no_entry:)
 
@@ -40,6 +40,7 @@ The patterns can be structured in roughly three different categories. Please cli
 * [Command](Command) [:notebook:](http://en.wikipedia.org/wiki/Command_pattern)
 * [Iterator](Iterator) [:notebook:](http://en.wikipedia.org/wiki/Iterator_pattern)
 * [Mediator](Mediator) [:notebook:](http://en.wikipedia.org/wiki/Mediator_pattern)
+* [Memento](Memento) [:notebook:](http://http://en.wikipedia.org/wiki/Memento_pattern)
 * [NullObject](NullObject) [:notebook:](http://en.wikipedia.org/wiki/Null_Object_pattern)
 * [Observer](Observer) [:notebook:](http://en.wikipedia.org/wiki/Observer_pattern)
 * [Specification](Specification) [:notebook:](http://en.wikipedia.org/wiki/Specification_pattern)
