@@ -40,7 +40,7 @@ The patterns can be structured in roughly three different categories. Please cli
 * [Command](Command) [:notebook:](http://en.wikipedia.org/wiki/Command_pattern)
 * [Iterator](Iterator) [:notebook:](http://en.wikipedia.org/wiki/Iterator_pattern)
 * [Mediator](Mediator) [:notebook:](http://en.wikipedia.org/wiki/Mediator_pattern)
-* [Memento](Memento) [:notebook:](http://http://en.wikipedia.org/wiki/Memento_pattern)
+* [Memento](Memento) [:notebook:](http://en.wikipedia.org/wiki/Memento_pattern)
 * [NullObject](NullObject) [:notebook:](http://en.wikipedia.org/wiki/Null_Object_pattern)
 * [Observer](Observer) [:notebook:](http://en.wikipedia.org/wiki/Observer_pattern)
 * [Specification](Specification) [:notebook:](http://en.wikipedia.org/wiki/Specification_pattern)
@@ -61,7 +61,7 @@ To establish a consistent code quality, please check your code using [PHP_CodeSn
 
 (The MIT License)
 
-Copyright (c) 2013 Dominik Liebler
+Copyright (c) 2014 Dominik Liebler
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
