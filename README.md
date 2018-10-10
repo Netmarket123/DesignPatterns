@@ -8,7 +8,7 @@ I think the problem with patterns is that often people do know them but don't kn
 
 ## Patterns
 
-The patterns can be structured in roughly three different categories. Please click on the [:notebook:](http://en.wikipedia.org/wiki/Software_design_pattern) for a full explanation of the pattern on Wikipedia.
+The patterns can be structured in roughly three different categories. Please click on the :notebook: for a full explanation of the pattern on Wikipedia.
 
 ### Creational
 
@@ -18,14 +18,12 @@ The patterns can be structured in roughly three different categories. Please cli
 * [FactoryMethod](FactoryMethod) [:notebook:](http://en.wikipedia.org/wiki/Factory_method_pattern)
 * [StaticFactory](StaticFactory)
 * [Prototype](Prototype) [:notebook:](http://en.wikipedia.org/wiki/Prototype_pattern)
-* [Pool](Pool) [:notebook:](http://en.wikipedia.org/wiki/Object_pool_pattern)
 * [Singleton](Singleton) [:notebook:](http://en.wikipedia.org/wiki/Singleton_pattern) (is considered an anti-pattern! :no_entry:)
 * [Multiton](Multiton) (is considered an anti-pattern! :no_entry:)
 
 ### Structural
 
 * [Adapter](Adapter) [:notebook:](http://en.wikipedia.org/wiki/Adapter_pattern)
-* [Bridge](Bridge) [:notebook:](http://en.wikipedia.org/wiki/Bridge_pattern)
 * [Composite](Composite) [:notebook:](http://en.wikipedia.org/wiki/Composite_pattern)
 * [Decorator](Decorator) [:notebook:](http://en.wikipedia.org/wiki/Decorator_pattern)
 * [Facade](Facade) [:notebook:](http://en.wikipedia.org/wiki/Facade_pattern)
@@ -41,7 +39,6 @@ The patterns can be structured in roughly three different categories. Please cli
 * [Command](Command) [:notebook:](http://en.wikipedia.org/wiki/Command_pattern)
 * [Iterator](Iterator) [:notebook:](http://en.wikipedia.org/wiki/Iterator_pattern)
 * [Mediator](Mediator) [:notebook:](http://en.wikipedia.org/wiki/Mediator_pattern)
-* [Memento](Memento) [:notebook:](http://en.wikipedia.org/wiki/Memento_pattern)
 * [NullObject](NullObject) [:notebook:](http://en.wikipedia.org/wiki/Null_Object_pattern)
 * [Observer](Observer) [:notebook:](http://en.wikipedia.org/wiki/Observer_pattern)
 * [Specification](Specification) [:notebook:](http://en.wikipedia.org/wiki/Specification_pattern)
@@ -62,7 +59,7 @@ To establish a consistent code quality, please check your code using [PHP_CodeSn
 
 (The MIT License)
 
-Copyright (c) 2014 Dominik Liebler
+Copyright (c) 2013 Dominik Liebler
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the

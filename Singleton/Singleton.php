@@ -10,7 +10,7 @@ class Singleton
     /**
      * @var cached reference to singleton instance 
      */
-    private static $instance;
+    protected static $instance;
     
     /**
      * gets the instance via lazy initialization (created on first usage)
