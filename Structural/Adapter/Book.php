@@ -12,6 +12,7 @@ class Book implements PaperBookInterface
      */
     public function open()
     {
+
     }
 
     /**
@@ -19,5 +20,6 @@ class Book implements PaperBookInterface
      */
     public function turnPage()
     {
+
     }
 }

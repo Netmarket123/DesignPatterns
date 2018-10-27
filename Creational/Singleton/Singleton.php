@@ -19,6 +19,7 @@ class Singleton
      */
     public static function getInstance()
     {
+        
         if (null === static::$instance) {
             static::$instance = new static;
         }
@@ -32,6 +33,7 @@ class Singleton
      */
     private function __construct()
     {
+
     }
 
     /**
@@ -41,6 +43,7 @@ class Singleton
      */
     private function __clone()
     {
+
     }
 
     /**
@@ -50,5 +53,6 @@ class Singleton
      */
     private function __wakeup()
     {
+
     }
 }

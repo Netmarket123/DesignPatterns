@@ -7,4 +7,5 @@ namespace DesignPatterns\Creational\StaticFactory;
  */
 interface FormatterInterface
 {
+
 }
