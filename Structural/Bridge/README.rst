@@ -1,11 +1,11 @@
-`Bridge`__
-==========
+`Bridge`_
+=========
 
 Purpose
 -------
 
 Decouple an abstraction from its implementation so that the two can vary
-independently.
+independently. (http://en.wikipedia.org/wiki/Bridge\_pattern)
 
 Sample:
 ^^^^^^^
@@ -71,4 +71,4 @@ Tests/BridgeTest.php
    :linenos:
 
 .. _`GitHub`: https://github.com/domnikl/DesignPatternsPHP/tree/master/Structural/Bridge
-.. __: http://en.wikipedia.org/wiki/Bridge_pattern
+.. _`Bridge`: http://en.wikipedia.org/wiki/Bridge_pattern

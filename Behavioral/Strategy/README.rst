@@ -1,5 +1,5 @@
-`Strategy`__
-============
+`Strategy`_
+===========
 
 Terminology:
 ------------
@@ -68,4 +68,4 @@ Tests/StrategyTest.php
    :linenos:
 
 .. _`GitHub`: https://github.com/domnikl/DesignPatternsPHP/tree/master/Behavioral/Strategy
-.. __: http://en.wikipedia.org/wiki/Strategy_pattern
+.. _`Strategy`: http://en.wikipedia.org/wiki/Strategy_pattern

@@ -1,5 +1,5 @@
-`Prototype`__
-=============
+`Prototype`_
+============
 
 Purpose
 -------
@@ -53,4 +53,4 @@ Test
 ----
 
 .. _`GitHub`: https://github.com/domnikl/DesignPatternsPHP/tree/master/Creational/Prototype
-.. __: http://en.wikipedia.org/wiki/Prototype_pattern
+.. _`Prototype`: http://en.wikipedia.org/wiki/Prototype_pattern

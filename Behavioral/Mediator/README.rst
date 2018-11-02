@@ -1,5 +1,5 @@
-`Mediator`__
-============
+`Mediator`_
+===========
 
 Purpose
 -------
@@ -70,4 +70,4 @@ Tests/MediatorTest.php
    :linenos:
 
 .. _`GitHub`: https://github.com/domnikl/DesignPatternsPHP/tree/master/Behavioral/Mediator
-.. __: http://en.wikipedia.org/wiki/Mediator_pattern
+.. _`Mediator`: http://en.wikipedia.org/wiki/Mediator_pattern

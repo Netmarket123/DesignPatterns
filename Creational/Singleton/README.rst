@@ -1,5 +1,5 @@
-`Singleton`__
-=============
+`Singleton`_
+============
 
 **THIS IS CONSIDERED TO BE AN ANTI-PATTERN! FOR BETTER TESTABILITY AND
 MAINTAINABILITY USE DEPENDENCY INJECTION!**
@@ -47,4 +47,4 @@ Tests/SingletonTest.php
    :linenos:
 
 .. _`GitHub`: https://github.com/domnikl/DesignPatternsPHP/tree/master/Creational/Singleton
-.. __: http://en.wikipedia.org/wiki/Singleton_pattern
+.. _`Singleton`: http://en.wikipedia.org/wiki/Singleton_pattern

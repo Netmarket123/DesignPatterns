@@ -1,5 +1,5 @@
-`Adapter / Wrapper`__
-=====================
+`Adapter / Wrapper`_
+====================
 
 Purpose
 -------
@@ -68,4 +68,4 @@ Tests/AdapterTest.php
    :linenos:
 
 .. _`GitHub`: https://github.com/domnikl/DesignPatternsPHP/tree/master/Structural/Adapter
-.. __: http://en.wikipedia.org/wiki/Adapter_pattern
+.. _`Adapter / Wrapper`: http://en.wikipedia.org/wiki/Adapter_pattern

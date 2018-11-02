@@ -1,5 +1,5 @@
-`Builder`__
-===========
+`Builder`_
+==========
 
 Purpose
 -------
@@ -102,4 +102,4 @@ Tests/DirectorTest.php
    :linenos:
 
 .. _`GitHub`: https://github.com/domnikl/DesignPatternsPHP/tree/master/Creational/Builder
-.. __: http://en.wikipedia.org/wiki/Builder_pattern
+.. _`Builder`: http://en.wikipedia.org/wiki/Builder_pattern

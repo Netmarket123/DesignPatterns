@@ -1,5 +1,5 @@
-`Visitor`__
-===========
+`Visitor`_
+==========
 
 Purpose
 -------
@@ -65,4 +65,4 @@ Tests/VisitorTest.php
    :linenos:
 
 .. _`GitHub`: https://github.com/domnikl/DesignPatternsPHP/tree/master/Behavioral/Visitor
-.. __: http://en.wikipedia.org/wiki/Visitor_pattern
+.. _`Visitor`: http://en.wikipedia.org/wiki/Visitor_pattern

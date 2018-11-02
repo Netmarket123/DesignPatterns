@@ -1,5 +1,5 @@
-`Memento`__
-===========
+`Memento`_
+==========
 
 Purpose
 -------
@@ -65,4 +65,4 @@ Tests/MementoTest.php
    :linenos:
 
 .. _`GitHub`: https://github.com/domnikl/DesignPatternsPHP/tree/master/Behavioral/Memento
-.. __: http://en.wikipedia.org/wiki/Memento_pattern
+.. _`Memento`: http://en.wikipedia.org/wiki/Memento_pattern

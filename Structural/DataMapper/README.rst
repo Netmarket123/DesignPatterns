@@ -1,5 +1,5 @@
-`Data Mapper`__
-===============
+`Data Mapper`_
+==============
 
 Purpose
 -------
@@ -57,4 +57,4 @@ Tests/DataMapperTest.php
    :linenos:
 
 .. _`GitHub`: https://github.com/domnikl/DesignPatternsPHP/tree/master/Structural/DataMapper
-.. __: http://en.wikipedia.org/wiki/Data_mapper_pattern
+.. _`Data Mapper`: http://en.wikipedia.org/wiki/Data_mapper_pattern

@@ -1,5 +1,5 @@
-`Dependency Injection`__
-========================
+`Dependency Injection`_
+=======================
 
 Purpose
 -------
@@ -85,4 +85,4 @@ Tests/config.php
    :linenos:
 
 .. _`GitHub`: https://github.com/domnikl/DesignPatternsPHP/tree/master/Structural/DependencyInjection
-.. __: http://en.wikipedia.org/wiki/Dependency_injection
+.. _`Dependency Injection`: http://en.wikipedia.org/wiki/Dependency_injection
