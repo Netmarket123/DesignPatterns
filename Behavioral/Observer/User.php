@@ -20,14 +20,9 @@ class User implements \SplSubject
     /**
      * observers
      *
-     * @var \SplObjectStorage
+     * @var array
      */
-    protected $observers;
-    
-    function __construct()
-    {
-        $this->observers = new \SplObjectStorage();
-    }
+    protected $observers = array();
 
     /**
      * attach a new observer
@@ -38,7 +33,7 @@ class User implements \SplSubject
      */
     public function attach(\SplObserver $observer)
     {
-        $this->observers->attach($observer);
+        $this->observers[] = $observer;
     }
 
     /**
@@ -50,7 +45,11 @@ class User implements \SplSubject
      */
     public function detach(\SplObserver $observer)
     {
-        $this->observers->detach($observer);
+        $index = array_search($observer, $this->observers);
+
+        if (false !== $index) {
+            unset($this->observers[$index]);
+        }
     }
 
     /**
