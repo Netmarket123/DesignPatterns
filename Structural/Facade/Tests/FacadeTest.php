@@ -3,7 +3,6 @@
 namespace DesignPatterns\Structural\Facade\Tests;
 
 use DesignPatterns\Structural\Facade\Facade as Computer;
-use DesignPatterns\Structural\Facade\OsInterface;
 
 /**
  * FacadeTest shows example of facades
@@ -36,7 +35,7 @@ class FacadeTest extends \PHPUnit_Framework_TestCase
     /**
      * @dataProvider getComputer
      */
-    public function testComputerOn(Computer $facade, OsInterface $os)
+    public function testComputerOn(Computer $facade, $os)
     {
         // interface is simpler :
         $facade->turnOn();
