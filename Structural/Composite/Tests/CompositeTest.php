@@ -1,6 +1,6 @@
 <?php
 
-namespace DesignPatterns\Structural\Composite\Tests;
+namespace DesignPatterns\Test\Composite\Tests;
 
 use DesignPatterns\Structural\Composite;
 

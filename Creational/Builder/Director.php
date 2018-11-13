@@ -12,7 +12,7 @@ class Director
 {
 
     /**
-     * The director don't know about concrete part
+     * The director don't know 'bout concrete part
      *
      * @param BuilderInterface $builder
      *
