@@ -29,7 +29,7 @@ msgstr ""
 
 #: ../../More/Delegation/README.rst:15
 msgid "UML Diagram"
-msgstr "Diagrama UML"
+msgstr ""
 
 #: ../../More/Delegation/README.rst:22
 msgid "Code"
