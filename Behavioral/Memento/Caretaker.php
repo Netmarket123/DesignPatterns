@@ -46,4 +46,5 @@ class Caretaker
 
         return $originator->getStateAsMemento()->getState();
     }
+
 }
