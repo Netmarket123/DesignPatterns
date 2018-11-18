@@ -1,6 +1,6 @@
 <?php
 
-namespace DesignPatterns\More\Repository;
+namespace DesignPatterns\Repository;
 
 /**
  * Post represents entity for some post that user left on the site
