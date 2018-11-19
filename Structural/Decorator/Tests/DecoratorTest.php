@@ -27,7 +27,7 @@ class DecoratorTest extends \PHPUnit_Framework_TestCase
 
     public function testXmlDecorator()
     {
-        // Wrap service with a JSON decorator for renderers
+        // Wrap service with a XML decorator for renderers
         $service = new Decorator\RenderInXml($this->service);
         // Our Renderer will now output XML instead of an array
         $xml = '<?xml version="1.0"?><foo>bar</foo>';
@@ -50,6 +50,21 @@ class DecoratorTest extends \PHPUnit_Framework_TestCase
      * @expectedException \PHPUnit_Framework_Error
      */
     public function testDecoratorTypeHinted()
+    {
+        if (version_compare(PHP_VERSION, '7', '>=')) {
+            throw new \PHPUnit_Framework_Error('Skip test for PHP 7', 0, __FILE__, __LINE__);
+        }
+
+        $this->getMockForAbstractClass('DesignPatterns\Structural\Decorator\Decorator', array(new \stdClass()));
+    }
+
+    /**
+     * Second key-point of this pattern : the decorator is type-hinted
+     *
+     * @requires PHP 7
+     * @expectedException TypeError
+     */
+    public function testDecoratorTypeHintedForPhp7()
     {
         $this->getMockForAbstractClass('DesignPatterns\Structural\Decorator\Decorator', array(new \stdClass()));
     }
