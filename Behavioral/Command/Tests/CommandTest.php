@@ -30,7 +30,7 @@ class CommandTest extends \PHPUnit_Framework_TestCase
     public function testInvocation()
     {
         $this->invoker->setCommand(new HelloCommand($this->receiver));
+        $this->expectOutputString('Hello World');
         $this->invoker->run();
-        $this->assertEquals($this->receiver->getOutput(), 'Hello World');
     }
 }
