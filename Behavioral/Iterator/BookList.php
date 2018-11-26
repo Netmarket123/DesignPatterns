@@ -11,6 +11,8 @@ class BookList implements \Countable
         if (isset($this->books[$bookNumberToGet])) {
             return $this->books[$bookNumberToGet];
         }
+
+        return;
     }
 
     public function addBook(Book $book)
