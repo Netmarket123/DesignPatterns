@@ -11,7 +11,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-06-03 23:59+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Nikita Strelkov <nikita.strelkov@gmail.com>\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -21,12 +21,10 @@ msgstr ""
 #: ../../Structural/Flyweight/README.rst:2
 msgid "`Flyweight`__"
 msgstr ""
-"`Приспособленец <https://ru.wikipedia.org/wiki/Приспособленец_(шаблон_проектирования)>`_ "
-"(`Flyweight`__)"
 
 #: ../../Structural/Flyweight/README.rst:5
 msgid "Purpose"
-msgstr "Назначение"
+msgstr ""
 
 #: ../../Structural/Flyweight/README.rst:7
 msgid ""
@@ -36,41 +34,36 @@ msgid ""
 "external data structures and pass them to the flyweight object when "
 "needed."
 msgstr ""
-"Для уменьшения использования памяти Приспособленец разделяет как можно "
-"больше памяти между аналогичными объектами. Это необходимо, когда "
-"используется большое количество объектов, состояние которых не сильно "
-"отличается. Обычной практикой является хранение состояния во внешних "
-"структурах и передавать их в объект-приспособленец, когда необходимо."
 
 #: ../../Structural/Flyweight/README.rst:12
 msgid "UML Diagram"
-msgstr "UML Диаграмма"
+msgstr ""
 
 #: ../../Structural/Flyweight/README.rst:19
 msgid "Code"
-msgstr "Код"
+msgstr ""
 
 #: ../../Structural/Flyweight/README.rst:21
 msgid "You can also find these code on `GitHub`_"
-msgstr "Вы можете найти этот код на `GitHub`_"
+msgstr ""
 
 #: ../../Structural/Flyweight/README.rst:23
 msgid "FlyweightInterface.php"
-msgstr "FlyweightInterface.php"
+msgstr ""
 
 #: ../../Structural/Flyweight/README.rst:29
 msgid "CharacterFlyweight.php"
-msgstr "CharacterFlyweight.php"
+msgstr ""
 
 #: ../../Structural/Flyweight/README.rst:35
 msgid "FlyweightFactory.php"
-msgstr "FlyweightFactory.php"
+msgstr ""
 
 #: ../../Structural/Flyweight/README.rst:42
 msgid "Test"
-msgstr "Тест"
+msgstr ""
 
 #: ../../Structural/Flyweight/README.rst:44
 msgid "Tests/FlyweightTest.php"
-msgstr "Tests/FlyweightTest.php"
+msgstr ""
 
