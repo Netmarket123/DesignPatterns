@@ -3,9 +3,10 @@
 namespace DesignPatterns\Structural\Bridge;
 
 /**
- * Implementer.
+ * Implementer
  */
 interface Workshop
 {
+
     public function work();
 }

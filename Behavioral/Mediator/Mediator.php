@@ -2,12 +2,15 @@
 
 namespace DesignPatterns\Behavioral\Mediator;
 
+use DesignPatterns\Behavioral\Mediator\Subsystem;
+
 /**
  * Mediator is the concrete Mediator for this design pattern.
  * In this example, I have made a "Hello World" with the Mediator Pattern.
  */
 class Mediator implements MediatorInterface
 {
+
     /**
      * @var Subsystem\Server
      */
@@ -36,7 +39,7 @@ class Mediator implements MediatorInterface
     }
 
     /**
-     * make request.
+     * make request
      */
     public function makeRequest()
     {
@@ -44,8 +47,7 @@ class Mediator implements MediatorInterface
     }
 
     /**
-     * query db.
-     *
+     * query db
      * @return mixed
      */
     public function queryDb()
@@ -54,7 +56,7 @@ class Mediator implements MediatorInterface
     }
 
     /**
-     * send response.
+     * send response
      *
      * @param string $content
      */

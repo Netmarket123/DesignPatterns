@@ -15,17 +15,14 @@ class Originator
      */
     public function setState($state)
     {
-        // you must check type of state inside child of this class
-        // or use type-hinting for full pattern implementation
         $this->state = $state;
     }
 
     /**
      * @return Memento
      */
-    public function getStateAsMemento()
+    public function saveToMemento()
     {
-        // you must save a separate copy in Memento
         $state = is_object($this->state) ? clone $this->state : $this->state;
 
         return new Memento($state);

@@ -9,6 +9,7 @@ use DesignPatterns\Behavioral\Iterator\BookListReverseIterator;
 
 class IteratorTest extends \PHPUnit_Framework_TestCase
 {
+
     /**
      * @var BookList
      */
@@ -29,8 +30,8 @@ class IteratorTest extends \PHPUnit_Framework_TestCase
                 array(
                     'Learning PHP Design Patterns by William Sanders',
                     'Professional Php Design Patterns by Aaron Saray',
-                    'Clean Code by Robert C. Martin',
-                ),
+                    'Clean Code by Robert C. Martin'
+                )
             ),
         );
     }
@@ -64,7 +65,7 @@ class IteratorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test BookList Remove.
+     * Test BookList Remove
      */
     public function testBookRemove()
     {

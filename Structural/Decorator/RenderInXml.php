@@ -3,22 +3,24 @@
 namespace DesignPatterns\Structural\Decorator;
 
 /**
- * Class RenderInXml.
+ * Class RenderInXml
  */
 class RenderInXml extends Decorator
 {
     /**
-     * render data as XML.
+     * render data as XML
      *
-     * @return string
+     * @return mixed|string
      */
     public function renderData()
     {
+        $output = $this->wrapped->renderData();
+
         // do some fancy conversion to xml from array ...
 
         $doc = new \DOMDocument();
 
-        foreach ($this->wrapped->renderData() as $key => $val) {
+        foreach ($output as $key => $val) {
             $doc->appendChild($doc->createElement($key, $val));
         }
 

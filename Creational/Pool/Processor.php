@@ -4,10 +4,11 @@ namespace DesignPatterns\Creational\Pool;
 
 class Processor
 {
+
     private $pool;
     private $processing = 0;
     private $maxProcesses = 3;
-    private $waitingQueue = array();
+    private $waitingQueue = [];
 
     public function __construct(Pool $pool)
     {

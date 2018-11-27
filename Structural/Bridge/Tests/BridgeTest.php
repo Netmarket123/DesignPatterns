@@ -9,6 +9,7 @@ use DesignPatterns\Structural\Bridge\Produce;
 
 class BridgeTest extends \PHPUnit_Framework_TestCase
 {
+
     public function testCar()
     {
         $vehicle = new Car(new Produce(), new Assemble());

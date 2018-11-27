@@ -1,5 +1,5 @@
-`Registry`__
-============
+`Registry`_
+===========
 
 Purpose
 -------
@@ -11,7 +11,7 @@ static methods (or using the Singleton pattern)
 Examples
 --------
 
--  Zend Framework 1: ``Zend_Registry`` holds the application's logger
+-  Zend Framework: ``Zend_Registry`` holds the application's logger
    object, front controller etc.
 -  Yii Framework: ``CWebApplication`` holds all the application
    components, such as ``CWebUser``, ``CUrlManager``, etc.
@@ -44,4 +44,4 @@ Tests/RegistryTest.php
    :linenos:
 
 .. _`GitHub`: https://github.com/domnikl/DesignPatternsPHP/tree/master/Structural/Registry
-.. __: http://en.wikipedia.org/wiki/Service_locator_pattern
+.. _`Registry`: http://en.wikipedia.org/wiki/Service_locator_pattern

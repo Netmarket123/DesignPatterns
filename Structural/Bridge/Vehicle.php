@@ -3,10 +3,11 @@
 namespace DesignPatterns\Structural\Bridge;
 
 /**
- * Abstraction.
+ * Abstraction
  */
 abstract class Vehicle
 {
+
     protected $workShop1;
     protected $workShop2;
 

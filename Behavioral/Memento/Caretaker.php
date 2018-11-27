@@ -4,46 +4,30 @@ namespace DesignPatterns\Behavioral\Memento;
 
 class Caretaker
 {
-    protected $history = array();
-
-    /**
-     * @return Memento
-     */
-    public function getFromHistory($id)
+    public static function run()
     {
-        return $this->history[$id];
-    }
+        /* @var $savedStates Memento[] */
 
-    /**
-     * @param Memento $state
-     */
-    public function saveToHistory(Memento $state)
-    {
-        $this->history[] = $state;
-    }
+        $savedStates = array();
 
-    public function runCustomLogic()
-    {
         $originator = new Originator();
 
         //Setting state to State1
-        $originator->setState('State1');
+        $originator->setState("State1");
         //Setting state to State2
-        $originator->setState('State2');
+        $originator->setState("State2");
         //Saving State2 to Memento
-        $this->saveToHistory($originator->getStateAsMemento());
+        $savedStates[] = $originator->saveToMemento();
         //Setting state to State3
-        $originator->setState('State3');
+        $originator->setState("State3");
 
         // We can request multiple mementos, and choose which one to roll back to.
         // Saving State3 to Memento
-        $this->saveToHistory($originator->getStateAsMemento());
+        $savedStates[] = $originator->saveToMemento();
         //Setting state to State4
-        $originator->setState('State4');
+        $originator->setState("State4");
 
-        $originator->restoreFromMemento($this->getFromHistory(1));
+        $originator->restoreFromMemento($savedStates[1]);
         //State after restoring from Memento: State3
-
-        return $originator->getStateAsMemento()->getState();
     }
 }

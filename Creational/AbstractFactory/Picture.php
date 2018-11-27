@@ -3,10 +3,11 @@
 namespace DesignPatterns\Creational\AbstractFactory;
 
 /**
- * Class Picture.
+ * Class Picture
  */
 abstract class Picture implements MediaInterface
 {
+
     /**
      * @var string
      */

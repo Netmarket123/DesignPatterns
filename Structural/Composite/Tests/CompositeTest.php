@@ -1,14 +1,15 @@
 <?php
 
-namespace DesignPatterns\Structural\Composite\Tests;
+namespace DesignPatterns\Test\Composite\Tests;
 
 use DesignPatterns\Structural\Composite;
 
 /**
- * FormTest tests the composite pattern on Form.
+ * FormTest tests the composite pattern on Form
  */
 class CompositeTest extends \PHPUnit_Framework_TestCase
 {
+
     public function testRender()
     {
         $form = new Composite\Form();
@@ -23,8 +24,8 @@ class CompositeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * The point of this pattern, a Composite must inherit from the node
-     * if you want to build trees.
+     * The all point of this pattern, a Composite must inherit from the node
+     * if you want to builld trees
      */
     public function testFormImplementsFormEelement()
     {

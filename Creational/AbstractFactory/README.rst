@@ -1,5 +1,5 @@
-`Abstract Factory`__
-====================
+`Abstract Factory`_
+===================
 
 Purpose
 -------
@@ -91,4 +91,4 @@ Tests/AbstractFactoryTest.php
    :linenos:
 
 .. _`GitHub`: https://github.com/domnikl/DesignPatternsPHP/tree/master/Creational/AbstractFactory
-.. __: http://en.wikipedia.org/wiki/Abstract_factory_pattern
+.. _`Abstract Factory`: http://en.wikipedia.org/wiki/Abstract_factory_pattern

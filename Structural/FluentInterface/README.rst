@@ -1,5 +1,5 @@
-`Fluent Interface`__
-====================
+`Fluent Interface`_
+===================
 
 Purpose
 -------
@@ -43,4 +43,5 @@ Tests/FluentInterfaceTest.php
    :linenos:
 
 .. _`GitHub`: https://github.com/domnikl/DesignPatternsPHP/tree/master/Structural/FluentInterface
-.. __: http://en.wikipedia.org/wiki/Fluent_interface
+
+.. _`Fluent Interface`: http://en.wikipedia.org/wiki/Fluent_interface

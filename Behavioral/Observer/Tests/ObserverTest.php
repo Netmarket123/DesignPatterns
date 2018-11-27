@@ -2,14 +2,15 @@
 
 namespace DesignPatterns\Behavioral\Observer\Tests;
 
-use DesignPatterns\Behavioral\Observer\User;
 use DesignPatterns\Behavioral\Observer\UserObserver;
+use DesignPatterns\Behavioral\Observer\User;
 
 /**
- * ObserverTest tests the Observer pattern.
+ * ObserverTest tests the Observer pattern
  */
 class ObserverTest extends \PHPUnit_Framework_TestCase
 {
+
     protected $observer;
 
     protected function setUp()
@@ -18,7 +19,7 @@ class ObserverTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Tests the notification.
+     * Tests the notification
      */
     public function testNotify()
     {
@@ -30,29 +31,20 @@ class ObserverTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Tests the subscribing.
+     * Tests the subscribing
      */
     public function testAttachDetach()
     {
         $subject = new User();
-        $reflection = new \ReflectionProperty($subject, 'observers');
-
-        $reflection->setAccessible(true);
-        /** @var \SplObjectStorage $observers */
-        $observers = $reflection->getValue($subject);
-
-        $this->assertInstanceOf('SplObjectStorage', $observers);
-        $this->assertFalse($observers->contains($this->observer));
-
+        $this->assertAttributeEmpty('observers', $subject);
         $subject->attach($this->observer);
-        $this->assertTrue($observers->contains($this->observer));
-
+        $this->assertAttributeNotEmpty('observers', $subject);
         $subject->detach($this->observer);
-        $this->assertFalse($observers->contains($this->observer));
+        $this->assertAttributeEmpty('observers', $subject);
     }
 
     /**
-     * Tests the update() invocation on a mockup.
+     * Tests the update() invocation on a mockup
      */
     public function testUpdateCalling()
     {

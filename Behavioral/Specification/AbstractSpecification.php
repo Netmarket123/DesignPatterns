@@ -1,14 +1,13 @@
 <?php
-
 namespace DesignPatterns\Behavioral\Specification;
 
 /**
- * An abstract specification allows the creation of wrapped specifications.
+ * An abstract specification allows the creation of wrapped specifications
  */
 abstract class AbstractSpecification implements SpecificationInterface
 {
     /**
-     * Checks if given item meets all criteria.
+     * Checks if given item meets all criteria
      *
      * @param Item $item
      *
@@ -17,7 +16,7 @@ abstract class AbstractSpecification implements SpecificationInterface
     abstract public function isSatisfiedBy(Item $item);
 
     /**
-     * Creates a new logical AND specification.
+     * Creates a new logical AND specification
      *
      * @param SpecificationInterface $spec
      *
@@ -29,7 +28,7 @@ abstract class AbstractSpecification implements SpecificationInterface
     }
 
     /**
-     * Creates a new logical OR composite specification.
+     * Creates a new logical OR composite specification
      *
      * @param SpecificationInterface $spec
      *
@@ -41,7 +40,7 @@ abstract class AbstractSpecification implements SpecificationInterface
     }
 
     /**
-     * Creates a new logical NOT specification.
+     * Creates a new logical NOT specification
      *
      * @return SpecificationInterface
      */

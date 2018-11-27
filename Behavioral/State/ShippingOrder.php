@@ -3,7 +3,7 @@
 namespace DesignPatterns\Behavioral\State;
 
 /**
- * Class ShippingOrder.
+ * Class ShippingOrder
  */
 class ShippingOrder implements OrderInterface
 {
@@ -26,9 +26,8 @@ class ShippingOrder implements OrderInterface
     }
 
     /**
-     * @throws \Exception
-     *
      * @return mixed|void
+     * @throws \Exception
      */
     public function shipOrder()
     {

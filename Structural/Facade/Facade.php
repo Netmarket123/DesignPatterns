@@ -3,7 +3,8 @@
 namespace DesignPatterns\Structural\Facade;
 
 /**
- * Class Facade.
+ *
+ *
  */
 class Facade
 {
@@ -19,7 +20,7 @@ class Facade
 
     /**
      * This is the perfect time to use a dependency injection container
-     * to create an instance of this class.
+     * to create an instance of this class
      *
      * @param BiosInterface $bios
      * @param OsInterface   $os
@@ -31,7 +32,7 @@ class Facade
     }
 
     /**
-     * Turn on the system.
+     * turn on the system
      */
     public function turnOn()
     {
@@ -41,7 +42,7 @@ class Facade
     }
 
     /**
-     * Turn off the system.
+     * turn off the system
      */
     public function turnOff()
     {

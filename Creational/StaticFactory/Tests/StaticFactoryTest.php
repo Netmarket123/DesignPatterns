@@ -5,15 +5,17 @@ namespace DesignPatterns\Creational\StaticFactory\Tests;
 use DesignPatterns\Creational\StaticFactory\StaticFactory;
 
 /**
- * Tests for Static Factory pattern.
+ * Tests for Static Factory pattern
+ *
  */
 class StaticFactoryTest extends \PHPUnit_Framework_TestCase
 {
+
     public function getTypeList()
     {
         return array(
             array('string'),
-            array('number'),
+            array('number')
         );
     }
 
@@ -31,6 +33,6 @@ class StaticFactoryTest extends \PHPUnit_Framework_TestCase
      */
     public function testException()
     {
-        StaticFactory::factory('');
+        StaticFactory::factory("");
     }
 }

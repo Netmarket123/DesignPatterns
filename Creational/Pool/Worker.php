@@ -4,6 +4,7 @@ namespace DesignPatterns\Creational\Pool;
 
 class Worker
 {
+
     public function __construct()
     {
         // let's say that constuctor does really expensive work...

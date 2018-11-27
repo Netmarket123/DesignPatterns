@@ -3,14 +3,15 @@
 namespace DesignPatterns\Behavioral\NullObject\Tests;
 
 use DesignPatterns\Behavioral\NullObject\NullLogger;
-use DesignPatterns\Behavioral\NullObject\PrintLogger;
 use DesignPatterns\Behavioral\NullObject\Service;
+use DesignPatterns\Behavioral\NullObject\PrintLogger;
 
 /**
- * LoggerTest tests for different loggers.
+ * LoggerTest tests for different loggers
  */
 class LoggerTest extends \PHPUnit_Framework_TestCase
 {
+
     public function testNullObject()
     {
         // one can use a singleton for NullObjet : I don't think it's a good idea

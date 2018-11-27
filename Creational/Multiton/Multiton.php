@@ -3,22 +3,24 @@
 namespace DesignPatterns\Creational\Multiton;
 
 /**
- * class Multiton.
+ * class Multiton
  */
 class Multiton
 {
     /**
-     * the first instance.
+     *
+     * the first instance
      */
     const INSTANCE_1 = '1';
 
     /**
-     * the second instance.
+     *
+     * the second instance
      */
     const INSTANCE_2 = '2';
 
     /**
-     * holds the named instances.
+     * holds the named instances
      *
      * @var array
      */
@@ -26,6 +28,7 @@ class Multiton
 
     /**
      * should not be called from outside: private!
+     *
      */
     private function __construct()
     {
@@ -33,7 +36,7 @@ class Multiton
 
     /**
      * gets the instance with the given name, e.g. Multiton::INSTANCE_1
-     * uses lazy initialization.
+     * uses lazy initialization
      *
      * @param string $instanceName
      *
@@ -49,7 +52,7 @@ class Multiton
     }
 
     /**
-     * prevent instance from being cloned.
+     * prevent instance from being cloned
      *
      * @return void
      */
@@ -58,7 +61,7 @@ class Multiton
     }
 
     /**
-     * prevent instance from being unserialized.
+     * prevent instance from being unserialized
      *
      * @return void
      */

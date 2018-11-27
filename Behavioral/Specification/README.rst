@@ -1,5 +1,5 @@
-`Specification`__
-=================
+`Specification`_
+================
 
 Purpose
 -------
@@ -8,11 +8,6 @@ Builds a clear specification of business rules, where objects can be
 checked against. The composite specification class has one method called
 ``isSatisfiedBy`` that returns either true or false depending on whether
 the given object satisfies the specification.
-
-Examples
---------
-
--  `RulerZ <https://github.com/K-Phoen/rulerz>`__ 
 
 UML Diagram
 -----------
@@ -78,4 +73,4 @@ Tests/SpecificationTest.php
    :linenos:
 
 .. _`GitHub`: https://github.com/domnikl/DesignPatternsPHP/tree/master/Behavioral/Specification
-.. __: http://en.wikipedia.org/wiki/Specification_pattern
+.. _`Specification`: http://en.wikipedia.org/wiki/Specification_pattern

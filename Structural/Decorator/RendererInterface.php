@@ -3,14 +3,14 @@
 namespace DesignPatterns\Structural\Decorator;
 
 /**
- * Class RendererInterface.
+ * Class RendererInterface
  */
 interface RendererInterface
 {
     /**
-     * render data.
+     * render data
      *
-     * @return string
+     * @return mixed
      */
     public function renderData();
 }

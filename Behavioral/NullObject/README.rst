@@ -1,5 +1,5 @@
-`Null Object`__
-===============
+`Null Object`_
+==============
 
 Purpose
 -------
@@ -72,4 +72,4 @@ Tests/LoggerTest.php
    :linenos:
 
 .. _`GitHub`: https://github.com/domnikl/DesignPatternsPHP/tree/master/Behavioral/NullObject
-.. __: http://en.wikipedia.org/wiki/Null_Object_pattern
+.. _`Null Object`: http://en.wikipedia.org/wiki/Null_Object_pattern
