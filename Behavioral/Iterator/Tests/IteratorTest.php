@@ -9,68 +9,66 @@ use DesignPatterns\Behavioral\Iterator\BookListReverseIterator;
 
 class IteratorTest extends \PHPUnit_Framework_TestCase
 {
-    public function testCanIterateOverBookList()
+    /**
+     * @var BookList
+     */
+    protected $bookList;
+
+    protected function setUp()
     {
-        $bookList = new BookList();
-        $bookList->addBook(new Book('Learning PHP Design Patterns', 'William Sanders'));
-        $bookList->addBook(new Book('Professional Php Design Patterns', 'Aaron Saray'));
-        $bookList->addBook(new Book('Clean Code', 'Robert C. Martin'));
+        $this->bookList = new BookList();
+        $this->bookList->addBook(new Book('Learning PHP Design Patterns', 'William Sanders'));
+        $this->bookList->addBook(new Book('Professional Php Design Patterns', 'Aaron Saray'));
+        $this->bookList->addBook(new Book('Clean Code', 'Robert C. Martin'));
+    }
 
-        $books = [];
-
-        foreach ($bookList as $book) {
-            $books[] = $book->getAuthorAndTitle();
-        }
-
-        $this->assertEquals(
-            [
-                'Learning PHP Design Patterns by William Sanders',
-                'Professional Php Design Patterns by Aaron Saray',
-                'Clean Code by Robert C. Martin',
-            ],
-            $books
+    public function expectedAuthors()
+    {
+        return array(
+            array(
+                array(
+                    'Learning PHP Design Patterns by William Sanders',
+                    'Professional Php Design Patterns by Aaron Saray',
+                    'Clean Code by Robert C. Martin',
+                ),
+            ),
         );
     }
 
-    public function testCanIterateOverBookListAfterRemovingBook()
+    /**
+     * @dataProvider expectedAuthors
+     */
+    public function testUseAIteratorAndValidateAuthors($expected)
     {
-        $book = new Book('Clean Code', 'Robert C. Martin');
-        $book2 = new Book('Professional Php Design Patterns', 'Aaron Saray');
+        $iterator = new BookListIterator($this->bookList);
 
-        $bookList = new BookList();
-        $bookList->addBook($book);
-        $bookList->addBook($book2);
-        $bookList->removeBook($book);
-
-        $books = [];
-        foreach ($bookList as $book) {
-            $books[] = $book->getAuthorAndTitle();
+        while ($iterator->valid()) {
+            $expectedBook = array_shift($expected);
+            $this->assertEquals($expectedBook, $iterator->current()->getAuthorAndTitle());
+            $iterator->next();
         }
-
-        $this->assertEquals(
-            ['Professional Php Design Patterns by Aaron Saray'],
-            $books
-        );
     }
 
-    public function testCanAddBookToList()
+    /**
+     * @dataProvider expectedAuthors
+     */
+    public function testUseAReverseIteratorAndValidateAuthors($expected)
     {
-        $book = new Book('Clean Code', 'Robert C. Martin');
+        $iterator = new BookListReverseIterator($this->bookList);
 
-        $bookList = new BookList();
-        $bookList->addBook($book);
-
-        $this->assertCount(1, $bookList);
+        while ($iterator->valid()) {
+            $expectedBook = array_pop($expected);
+            $this->assertEquals($expectedBook, $iterator->current()->getAuthorAndTitle());
+            $iterator->next();
+        }
     }
 
-    public function testCanRemoveBookFromList()
+    /**
+     * Test BookList Remove.
+     */
+    public function testBookRemove()
     {
-        $book = new Book('Clean Code', 'Robert C. Martin');
-
-        $bookList = new BookList();
-        $bookList->addBook($book);
-        $bookList->removeBook($book);
-
-        $this->assertCount(0, $bookList);
+        $this->bookList->removeBook($this->bookList->getBook(0));
+        $this->assertEquals($this->bookList->count(), 2);
     }
 }
