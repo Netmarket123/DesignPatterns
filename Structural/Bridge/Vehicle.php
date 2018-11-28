@@ -16,5 +16,7 @@ abstract class Vehicle
         $this->workShop2 = $workShop2;
     }
 
-    abstract public function manufacture();
+    public function manufacture()
+    {
+    }
 }
