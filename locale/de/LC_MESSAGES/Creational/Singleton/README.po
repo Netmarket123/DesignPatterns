@@ -4,73 +4,75 @@ msgstr ""
 "Project-Id-Version: DesignPatternsPHP 1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-05-29 12:18+0200\n"
-"PO-Revision-Date: 2016-04-04 08:44+0200\n"
+"PO-Revision-Date: 2015-05-30 23:20+0300\n"
 "Last-Translator: Dominik Liebler <liebler.dominik@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: de\n"
-"Language-Team: \n"
-"X-Generator: Poedit 1.8.7.1\n"
 
 #: ../../Creational/Singleton/README.rst:2
 msgid "`Singleton`__"
-msgstr "`Singleton`__"
+msgstr ""
+"`Одиночка <https://ru.wikipedia.org/wiki/"
+"Одиночка_(шаблон_проектирования)>`_ (`Singleton`__)"
 
 #: ../../Creational/Singleton/README.rst:4
 msgid ""
 "**THIS IS CONSIDERED TO BE AN ANTI-PATTERN! FOR BETTER TESTABILITY AND "
 "MAINTAINABILITY USE DEPENDENCY INJECTION!**"
 msgstr ""
-"**DIESES MUSTER IST EIN ANTI-PATTERN! FÜR BESSERE TESTBARKEIT UND "
-"WARTBARKEIT, VERWENDE DAS DEPENDENCY INJECTION MUSTER!**"
+"**Это считается анти-паттерном! Для лучшей тестируемости и "
+"сопровождения кода используйте Инъекцию Зависимости (Dependency "
+"Injection)!**"
 
 #: ../../Creational/Singleton/README.rst:8
 msgid "Purpose"
-msgstr "Zweck"
+msgstr "Назначение"
 
 #: ../../Creational/Singleton/README.rst:10
 msgid ""
-"To have only one instance of this object in the application that will "
-"handle all calls."
+"To have only one instance of this object in the application that will handle"
+" all calls."
 msgstr ""
-"Um nur eine einzelne Instanz eines Objekts in der Anwendung zu verwenden, "
-"die alle Aufrufe abarbeitet."
+"Позволяет содержать только один экземпляр объекта в приложении, "
+"которое будет обрабатывать все обращения, запрещая создавать новый "
+"экземпляр."
 
 #: ../../Creational/Singleton/README.rst:14
 msgid "Examples"
-msgstr "Beispiele"
+msgstr "Примеры"
 
 #: ../../Creational/Singleton/README.rst:16
 msgid "DB Connector"
-msgstr "DB Konnektor"
+msgstr "DB Connector для подключения к базе данных"
 
 #: ../../Creational/Singleton/README.rst:17
 msgid ""
 "Logger (may also be a Multiton if there are many log files for several "
 "purposes)"
 msgstr ""
-"Logger (kann auch ein Multiton sein, falls es mehrere Logfiles für "
-"verschiedene Zwecke gibt)"
+"Logger (также может быть Multiton если есть много журналов для "
+"нескольких целей)"
 
 #: ../../Creational/Singleton/README.rst:19
 msgid ""
 "Lock file for the application (there is only one in the filesystem ...)"
 msgstr ""
-"Lock file für die Anwendung (falls diese nur einmal auf dem System laufen "
-"darf ...)"
+"Блокировка файла в приложении (есть только один в файловой системе с "
+"одновременным доступом к нему)"
 
 #: ../../Creational/Singleton/README.rst:23
 msgid "UML Diagram"
-msgstr "UML Diagramm"
+msgstr "UML Диаграмма"
 
 #: ../../Creational/Singleton/README.rst:30
 msgid "Code"
-msgstr "Code"
+msgstr "Код"
 
 #: ../../Creational/Singleton/README.rst:32
 msgid "You can also find these code on `GitHub`_"
-msgstr "Du findest den Code auch auf `GitHub`_"
+msgstr "Вы можете найти этот код на `GitHub`_"
 
 #: ../../Creational/Singleton/README.rst:34
 msgid "Singleton.php"
@@ -78,7 +80,7 @@ msgstr "Singleton.php"
 
 #: ../../Creational/Singleton/README.rst:41
 msgid "Test"
-msgstr "Теst"
+msgstr "Тест"
 
 #: ../../Creational/Singleton/README.rst:43
 msgid "Tests/SingletonTest.php"

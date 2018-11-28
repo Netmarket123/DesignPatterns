@@ -16,7 +16,6 @@ relationships between entities.
    DependencyInjection/README
    Facade/README
    FluentInterface/README
-   Flyweight/README
    Proxy/README
    Registry/README
 

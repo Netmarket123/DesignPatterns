@@ -22,7 +22,8 @@ class Value implements ValueInterface
      */
     public function __construct(Attribute $attribute)
     {
-        $this->setAttribute($attribute);
+        $attribute->addValue($this);
+        $this->attribute = $attribute;
     }
 
     /**
@@ -32,7 +33,7 @@ class Value implements ValueInterface
      */
     public function setAttribute(Attribute $attribute)
     {
-        $this->attribute && $this->attribute->removeValue($this); // Remove value from current attribute
+        $this->attribute->removeValue($this); // Remove value from current attribute
         $attribute->addValue($this); // Add value to new attribute
         $this->attribute = $attribute;
 

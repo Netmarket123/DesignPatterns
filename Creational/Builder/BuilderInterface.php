@@ -2,6 +2,9 @@
 
 namespace DesignPatterns\Creational\Builder;
 
+/**
+ *
+ */
 interface BuilderInterface
 {
     /**

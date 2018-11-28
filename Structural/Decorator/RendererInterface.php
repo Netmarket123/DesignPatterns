@@ -10,7 +10,7 @@ interface RendererInterface
     /**
      * render data.
      *
-     * @return string
+     * @return mixed
      */
     public function renderData();
 }
