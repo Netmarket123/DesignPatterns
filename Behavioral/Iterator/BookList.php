@@ -7,7 +7,7 @@ class BookList implements \Countable, \Iterator
     /**
      * @var Book[]
      */
-    private $books = [];
+    private $books;
 
     /**
      * @var int
@@ -22,12 +22,11 @@ class BookList implements \Countable, \Iterator
     public function removeBook(Book $bookToRemove)
     {
         foreach ($this->books as $key => $book) {
+            /** @var Book $book */
             if ($book->getAuthorAndTitle() === $bookToRemove->getAuthorAndTitle()) {
                 unset($this->books[$key]);
             }
         }
-
-        $this->books = array_values($this->books);
     }
 
     public function count(): int
@@ -37,12 +36,12 @@ class BookList implements \Countable, \Iterator
 
     public function current(): Book
     {
-        return $this->books[$this->currentIndex];
+        return $this->books[array_keys($this->books)[$this->currentIndex]];
     }
 
     public function key(): int
     {
-        return $this->currentIndex;
+        return array_keys($this->books)[$this->currentIndex];
     }
 
     public function next()
@@ -57,6 +56,6 @@ class BookList implements \Countable, \Iterator
 
     public function valid(): bool
     {
-        return isset($this->books[$this->currentIndex]);
+        return isset(array_keys($this->books)[$this->currentIndex]);
     }
 }
