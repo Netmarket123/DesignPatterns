@@ -1,11 +1,11 @@
-`Mediator`_
-===========
+`Mediator`__
+============
 
 Purpose
 -------
 
-This pattern provides an easy to decouple many components working
-together. It is a good alternative over Observer IF you have a "central
+This pattern provides an easy way to decouple many components working
+together. It is a good alternative to Observer IF you have a "central
 intelligence", like a controller (but not in the sense of the MVC).
 
 All components (called Colleague) are only coupled to the
@@ -70,4 +70,4 @@ Tests/MediatorTest.php
    :linenos:
 
 .. _`GitHub`: https://github.com/domnikl/DesignPatternsPHP/tree/master/Behavioral/Mediator
-.. _`Mediator`: http://en.wikipedia.org/wiki/Mediator_pattern
+.. __: http://en.wikipedia.org/wiki/Mediator_pattern
