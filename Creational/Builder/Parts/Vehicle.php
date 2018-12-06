@@ -2,16 +2,19 @@
 
 namespace DesignPatterns\Creational\Builder\Parts;
 
+/**
+ * Vehicle class is an abstraction for a vehicle.
+ */
 abstract class Vehicle
 {
     /**
-     * @var object[]
+     * @var array
      */
-    private $data = [];
+    protected $data;
 
     /**
      * @param string $key
-     * @param object $value
+     * @param mixed  $value
      */
     public function setPart($key, $value)
     {

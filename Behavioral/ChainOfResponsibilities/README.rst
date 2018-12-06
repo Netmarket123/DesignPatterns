@@ -33,6 +33,12 @@ Code
 
 You can also find these code on `GitHub`_
 
+Request.php
+
+.. literalinclude:: Request.php
+   :language: php
+   :linenos:
+
 Handler.php
 
 .. literalinclude:: Handler.php

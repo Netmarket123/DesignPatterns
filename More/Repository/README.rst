@@ -43,6 +43,12 @@ PostRepository.php
    :language: php
    :linenos:
 
+Storage.php
+
+.. literalinclude:: Storage.php
+   :language: php
+   :linenos:
+
 MemoryStorage.php
 
 .. literalinclude:: MemoryStorage.php
@@ -51,11 +57,5 @@ MemoryStorage.php
 
 Test
 ----
-
-Tests/RepositoryTest.php
-
-.. literalinclude:: Tests/RepositoryTest.php
-    :language: php
-    :linenos:
 
 .. _`GitHub`: https://github.com/domnikl/DesignPatternsPHP/tree/master/More/Repository

@@ -2,6 +2,9 @@
 
 namespace DesignPatterns\Behavioral\Command;
 
+/**
+ * class CommandInterface.
+ */
 interface CommandInterface
 {
     /**

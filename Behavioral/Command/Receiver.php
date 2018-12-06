@@ -7,20 +7,14 @@ namespace DesignPatterns\Behavioral\Command;
  */
 class Receiver
 {
-    /**
-     * @var bool
-     */
     private $enableDate = false;
 
-    /**
-     * @var string[]
-     */
-    private $output = [];
+    private $output = array();
 
     /**
      * @param string $str
      */
-    public function write(string $str)
+    public function write($str)
     {
         if ($this->enableDate) {
             $str .= ' ['.date('Y-m-d').']';
@@ -29,13 +23,13 @@ class Receiver
         $this->output[] = $str;
     }
 
-    public function getOutput(): string
+    public function getOutput()
     {
-        return join("\n", $this->output);
+        return implode("\n", $this->output);
     }
 
     /**
-     * Enable receiver to display message date
+     * Enable receiver to display message date.
      */
     public function enableDate()
     {
@@ -43,7 +37,7 @@ class Receiver
     }
 
     /**
-     * Disable receiver to display message date
+     * Disable receiver to display message date.
      */
     public function disableDate()
     {

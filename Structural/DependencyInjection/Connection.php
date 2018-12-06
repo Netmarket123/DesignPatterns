@@ -2,6 +2,9 @@
 
 namespace DesignPatterns\Structural\DependencyInjection;
 
+/**
+ * Class Connection.
+ */
 class Connection
 {
     /**

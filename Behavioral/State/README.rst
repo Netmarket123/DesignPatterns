@@ -20,15 +20,21 @@ Code
 
 You can also find these code on `GitHub`_
 
-OrderRepository.php
+OrderController.php
 
-.. literalinclude:: OrderRepository.php
+.. literalinclude:: OrderController.php
    :language: php
    :linenos:
 
-Order.php
+OrderFactory.php
 
-.. literalinclude:: Order.php
+.. literalinclude:: OrderFactory.php
+   :language: php
+   :linenos:
+
+OrderInterface.php
+
+.. literalinclude:: OrderInterface.php
    :language: php
    :linenos:
 

@@ -38,9 +38,15 @@ SpecificationInterface.php
    :language: php
    :linenos:
 
-OrSpecification.php
+AbstractSpecification.php
 
-.. literalinclude:: OrSpecification.php
+.. literalinclude:: AbstractSpecification.php
+   :language: php
+   :linenos:
+
+Either.php
+
+.. literalinclude:: Either.php
    :language: php
    :linenos:
 
@@ -50,15 +56,15 @@ PriceSpecification.php
    :language: php
    :linenos:
 
-AndSpecification.php
+Plus.php
 
-.. literalinclude:: AndSpecification.php
+.. literalinclude:: Plus.php
    :language: php
    :linenos:
 
-NotSpecification.php
+Not.php
 
-.. literalinclude:: NotSpecification.php
+.. literalinclude:: Not.php
    :language: php
    :linenos:
 

@@ -2,9 +2,17 @@
 
 namespace DesignPatterns\Creational\SimpleFactory;
 
-class Bicycle
+/**
+ * Bicycle is a bicycle.
+ */
+class Bicycle implements VehicleInterface
 {
-    public function driveTo(string $destination)
+    /**
+     * @param mixed $destination
+     *
+     * @return mixed|void
+     */
+    public function driveTo($destination)
     {
     }
 }

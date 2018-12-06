@@ -3,26 +3,30 @@
 namespace DesignPatterns\Creational\StaticFactory;
 
 /**
- * Note1: Remember, static means global state which is evil because it can't be mocked for tests
+ * Note1: Remember, static => global => evil
  * Note2: Cannot be subclassed or mock-upped or have multiple different instances.
  */
-final class StaticFactory
+class StaticFactory
 {
     /**
+     * the parametrized function to get create an instance.
+     *
      * @param string $type
+     *
+     * @static
+     *
+     * @throws \InvalidArgumentException
      *
      * @return FormatterInterface
      */
-    public static function factory(string $type): FormatterInterface
+    public static function factory($type)
     {
-        if ($type == 'number') {
-            return new FormatNumber();
+        $className = __NAMESPACE__.'\Format'.ucfirst($type);
+
+        if (!class_exists($className)) {
+            throw new \InvalidArgumentException('Missing format class.');
         }
 
-        if ($type == 'string') {
-            return new FormatString();
-        }
-
-        throw new \InvalidArgumentException('Unknown format given');
+        return new $className();
     }
 }
