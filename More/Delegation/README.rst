@@ -4,11 +4,7 @@
 Purpose
 -------
 
-Demonstrate the Delegator pattern, where an object, instead of performing one
-of its stated tasks, delegates that task to an associated helper object. In
-this case TeamLead professes to writeCode and Usage uses this, while TeamLead
-delegates writeCode to JuniorDeveloper's writeBadCode function. This inverts
-the responsibility so that Usage is unknowingly executing writeBadCode.
+Demonstrate the Delegator pattern, where an object, instead of performing one of its stated tasks, delegates that task to an associated helper object. In this case TeamLead professes to writeCode and Usage uses this, while TeamLead delegates writeCode to JuniorDeveloper's writeBadCode function. This inverts the responsibility so that Usage is unknowingly executing writeBadCode.
 
 Examples
 --------
@@ -26,12 +22,6 @@ Code
 ----
 
 You can also find these code on `GitHub`_
-
-Usage.php
-
-.. literalinclude:: Usage.php
-   :language: php
-   :linenos:
 
 TeamLead.php
 

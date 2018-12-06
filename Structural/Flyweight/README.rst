@@ -12,7 +12,7 @@ UML Diagram
 -----------
 
 .. image:: uml/uml.png
-   :alt: Alt Flyweight UML Diagram
+   :alt: Alt Facade UML Diagram
    :align: center
 
 Code
