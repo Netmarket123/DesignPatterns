@@ -2,6 +2,6 @@
 
 namespace DesignPatterns\More\ServiceLocator;
 
-class LogService
+class LogService implements LogServiceInterface
 {
 }

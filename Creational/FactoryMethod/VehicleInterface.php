@@ -2,7 +2,15 @@
 
 namespace DesignPatterns\Creational\FactoryMethod;
 
+/**
+ * VehicleInterface is a contract for a vehicle.
+ */
 interface VehicleInterface
 {
-    public function setColor(string $rgb);
+    /**
+     * sets the color of the vehicle.
+     *
+     * @param string $rgb
+     */
+    public function setColor($rgb);
 }

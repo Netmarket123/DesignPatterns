@@ -2,6 +2,9 @@
 
 namespace DesignPatterns\Structural\Composite;
 
+/**
+ * Class InputElement.
+ */
 class InputElement extends FormElement
 {
     /**

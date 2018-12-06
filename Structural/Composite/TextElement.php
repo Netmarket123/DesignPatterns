@@ -2,6 +2,9 @@
 
 namespace DesignPatterns\Structural\Composite;
 
+/**
+ * Class TextElement.
+ */
 class TextElement extends FormElement
 {
     /**

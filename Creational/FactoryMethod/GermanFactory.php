@@ -2,19 +2,28 @@
 
 namespace DesignPatterns\Creational\FactoryMethod;
 
+/**
+ * GermanFactory is a vehicle factory in Germany.
+ */
 class GermanFactory extends FactoryMethod
 {
-    protected function createVehicle(string $type): VehicleInterface
+    /**
+     * {@inheritdoc}
+     */
+    protected function createVehicle($type)
     {
         switch ($type) {
             case parent::CHEAP:
                 return new Bicycle();
+                break;
             case parent::FAST:
-                $carMercedes = new CarMercedes();
-                // we can specialize the way we want some concrete Vehicle since we know the class
-                $carMercedes->addAMGTuning();
+                $obj = new Porsche();
+                // we can specialize the way we want some concrete Vehicle since
+                // we know the class
+                $obj->addTuningAMG();
 
-                return $carMercedes;
+                return $obj;
+                break;
             default:
                 throw new \InvalidArgumentException("$type is not a valid vehicle");
         }

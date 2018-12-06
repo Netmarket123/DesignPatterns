@@ -2,10 +2,15 @@
 
 namespace DesignPatterns\More\EAV;
 
-class Entity
+use SplObjectStorage;
+
+/**
+ * Class Entity.
+ */
+class Entity implements ValueAccessInterface
 {
     /**
-     * @var \SplObjectStorage
+     * @var SplObjectStorage
      */
     private $values;
 
@@ -14,28 +19,64 @@ class Entity
      */
     private $name;
 
-    /**
-     * @param string $name
-     * @param Value[] $values
-     */
-    public function __construct(string $name, $values)
+    public function __construct()
     {
-        $this->values = new \SplObjectStorage();
-        $this->name = $name;
-
-        foreach ($values as $value) {
-            $this->values->attach($value);
-        }
+        $this->values = new SplObjectStorage();
     }
 
-    public function __toString(): string
+    /**
+     * @return SplObjectStorage
+     */
+    public function getValues()
     {
-        $text = [$this->name];
+        return $this->values;
+    }
 
-        foreach ($this->values as $value) {
-            $text[] = (string) $value;
+    /**
+     * @param ValueInterface $value
+     *
+     * @return $this
+     */
+    public function addValue(ValueInterface $value)
+    {
+        if (!$this->values->contains($value)) {
+            $this->values->attach($value);
         }
 
-        return join(', ', $text);
+        return $this;
+    }
+
+    /**
+     * @param ValueInterface $value
+     *
+     * @return $this
+     */
+    public function removeValue(ValueInterface $value)
+    {
+        if ($this->values->contains($value)) {
+            $this->values->detach($value);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param string $name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
     }
 }

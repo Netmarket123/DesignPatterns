@@ -2,25 +2,29 @@
 
 namespace DesignPatterns\Behavioral\Visitor;
 
-class Group implements Role
+/**
+ * An example of a Visitor: Group.
+ */
+class Group extends Role
 {
     /**
      * @var string
      */
-    private $name;
+    protected $name;
 
-    public function __construct(string $name)
+    /**
+     * @param string $name
+     */
+    public function __construct($name)
     {
-        $this->name = $name;
+        $this->name = (string) $name;
     }
 
-    public function getName(): string
+    /**
+     * @return string
+     */
+    public function getName()
     {
-        return sprintf('Group: %s', $this->name);
-    }
-
-    public function accept(RoleVisitorInterface $visitor)
-    {
-        $visitor->visitGroup($this);
+        return 'Group: '.$this->name;
     }
 }
