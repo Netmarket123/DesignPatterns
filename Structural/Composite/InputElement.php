@@ -2,10 +2,20 @@
 
 namespace DesignPatterns\Structural\Composite;
 
-class InputElement implements RenderableInterface
+/**
+ * Class InputElement.
+ */
+class InputElement extends FormElement
 {
-    public function render(): string
+    /**
+     * renders the input element HTML.
+     *
+     * @param int $indent
+     *
+     * @return mixed|string
+     */
+    public function render($indent = 0)
     {
-        return '<input type="text" />';
+        return str_repeat('  ', $indent).'<input type="text" />';
     }
 }

@@ -4,33 +4,40 @@ namespace DesignPatterns\Behavioral\TemplateMethod\Tests;
 
 use DesignPatterns\Behavioral\TemplateMethod;
 
+/**
+ * JourneyTest tests all journeys.
+ */
 class JourneyTest extends \PHPUnit_Framework_TestCase
 {
-    public function testCanGetOnVacationOnTheBeach()
+    public function testBeach()
     {
-        $beachJourney = new TemplateMethod\BeachJourney();
-        $beachJourney->takeATrip();
-
-        $this->assertEquals(
-            ['Buy a flight ticket', 'Taking the plane', 'Swimming and sun-bathing', 'Taking the plane'],
-            $beachJourney->getThingsToDo()
-        );
+        $journey = new TemplateMethod\BeachJourney();
+        $this->expectOutputRegex('#sun-bathing#');
+        $journey->takeATrip();
     }
 
-    public function testCanGetOnAJourneyToACity()
+    public function testCity()
     {
-        $beachJourney = new TemplateMethod\CityJourney();
-        $beachJourney->takeATrip();
+        $journey = new TemplateMethod\CityJourney();
+        $this->expectOutputRegex('#drink#');
+        $journey->takeATrip();
+    }
 
-        $this->assertEquals(
-            [
-                'Buy a flight ticket',
-                'Taking the plane',
-                'Eat, drink, take photos and sleep',
-                'Buy a gift',
-                'Taking the plane'
-            ],
-            $beachJourney->getThingsToDo()
-        );
+    /**
+     * How to test an abstract template method with PHPUnit.
+     */
+    public function testLasVegas()
+    {
+        $journey = $this->getMockForAbstractClass('DesignPatterns\Behavioral\TemplateMethod\Journey');
+        $journey->expects($this->once())
+            ->method('enjoyVacation')
+            ->will($this->returnCallback(array($this, 'mockUpVacation')));
+        $this->expectOutputRegex('#Las Vegas#');
+        $journey->takeATrip();
+    }
+
+    public function mockUpVacation()
+    {
+        echo "Fear and loathing in Las Vegas\n";
     }
 }

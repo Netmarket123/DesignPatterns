@@ -5,42 +5,43 @@ namespace DesignPatterns\Behavioral\Strategy\Tests;
 use DesignPatterns\Behavioral\Strategy\DateComparator;
 use DesignPatterns\Behavioral\Strategy\IdComparator;
 use DesignPatterns\Behavioral\Strategy\ObjectCollection;
+use DesignPatterns\Behavioral\Strategy\Strategy;
 
+/**
+ * Tests for Strategy pattern.
+ */
 class StrategyTest extends \PHPUnit_Framework_TestCase
 {
-    public function provideIntegers()
+    public function getIdCollection()
     {
-        return [
-            [
-                [['id' => 2], ['id' => 1], ['id' => 3]],
-                ['id' => 1],
-            ],
-            [
-                [['id' => 3], ['id' => 2], ['id' => 1]],
-                ['id' => 1],
-            ],
-        ];
+        return array(
+            array(
+                array(array('id' => 2), array('id' => 1), array('id' => 3)),
+                array('id' => 1),
+            ),
+            array(
+                array(array('id' => 3), array('id' => 2), array('id' => 1)),
+                array('id' => 1),
+            ),
+        );
     }
 
-    public function providateDates()
+    public function getDateCollection()
     {
-        return [
-            [
-                [['date' => '2014-03-03'], ['date' => '2015-03-02'], ['date' => '2013-03-01']],
-                ['date' => '2013-03-01'],
-            ],
-            [
-                [['date' => '2014-02-03'], ['date' => '2013-02-01'], ['date' => '2015-02-02']],
-                ['date' => '2013-02-01'],
-            ],
-        ];
+        return array(
+            array(
+                array(array('date' => '2014-03-03'), array('date' => '2015-03-02'), array('date' => '2013-03-01')),
+                array('date' => '2013-03-01'),
+            ),
+            array(
+                array(array('date' => '2014-02-03'), array('date' => '2013-02-01'), array('date' => '2015-02-02')),
+                array('date' => '2013-02-01'),
+            ),
+        );
     }
 
     /**
-     * @dataProvider provideIntegers
-     *
-     * @param array $collection
-     * @param array $expected
+     * @dataProvider getIdCollection
      */
     public function testIdComparator($collection, $expected)
     {
@@ -53,10 +54,7 @@ class StrategyTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @dataProvider providateDates
-     *
-     * @param array $collection
-     * @param array $expected
+     * @dataProvider getDateCollection
      */
     public function testDateComparator($collection, $expected)
     {

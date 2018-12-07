@@ -4,21 +4,19 @@ namespace DesignPatterns\Behavioral\Memento;
 
 class Memento
 {
-    /**
-     * @var State
-     */
+    /* @var mixed */
     private $state;
 
     /**
-     * @param State $stateToSave
+     * @param mixed $stateToSave
      */
-    public function __construct(State $stateToSave)
+    public function __construct($stateToSave)
     {
         $this->state = $stateToSave;
     }
 
     /**
-     * @return State
+     * @return mixed
      */
     public function getState()
     {
