@@ -3,10 +3,12 @@
 namespace DesignPatterns\Structural\Adapter;
 
 /**
- * This is the adapter here. Notice it implements BookInterface,
- * therefore you don't have to change the code of the client which is using a Book
+ * EBookAdapter is an adapter to fit an e-book like a paper book.
+ *
+ * This is the adapter here. Notice it implements PaperBookInterface,
+ * therefore you don't have to change the code of the client which using paper book.
  */
-class EBookAdapter implements BookInterface
+class EBookAdapter implements PaperBookInterface
 {
     /**
      * @var EBookInterface
@@ -14,11 +16,13 @@ class EBookAdapter implements BookInterface
     protected $eBook;
 
     /**
-     * @param EBookInterface $eBook
+     * Notice the constructor, it "wraps" an electronic book.
+     *
+     * @param EBookInterface $ebook
      */
-    public function __construct(EBookInterface $eBook)
+    public function __construct(EBookInterface $ebook)
     {
-        $this->eBook = $eBook;
+        $this->eBook = $ebook;
     }
 
     /**
@@ -26,22 +30,14 @@ class EBookAdapter implements BookInterface
      */
     public function open()
     {
-        $this->eBook->unlock();
-    }
-
-    public function turnPage()
-    {
-        $this->eBook->pressNext();
+        $this->eBook->pressStart();
     }
 
     /**
-     * notice the adapted behavior here: EBookInterface::getPage() will return two integers, but BookInterface
-     * supports only a current page getter, so we adapt the behavior here
-     *
-     * @return int
+     * turns pages.
      */
-    public function getPage(): int
+    public function turnPage()
     {
-        return $this->eBook->getPage()[0];
+        $this->eBook->pressNext();
     }
 }

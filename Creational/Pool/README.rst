@@ -1,6 +1,9 @@
 `Pool`__
 ========
 
+Purpose
+-------
+
 The **object pool pattern** is a software creational design pattern that
 uses a set of initialized objects kept ready to use – a "pool" – rather
 than allocating and destroying them on demand. A client of the pool will
@@ -33,15 +36,21 @@ Code
 
 You can also find these code on `GitHub`_
 
-WorkerPool.php
+Pool.php
 
-.. literalinclude:: WorkerPool.php
+.. literalinclude:: Pool.php
    :language: php
    :linenos:
 
-StringReverseWorker.php
+Processor.php
 
-.. literalinclude:: StringReverseWorker.php
+.. literalinclude:: Processor.php
+   :language: php
+   :linenos:
+
+Worker.php
+
+.. literalinclude:: Worker.php
    :language: php
    :linenos:
 
@@ -51,6 +60,12 @@ Test
 Tests/PoolTest.php
 
 .. literalinclude:: Tests/PoolTest.php
+   :language: php
+   :linenos:
+
+Tests/TestWorker.php
+
+.. literalinclude:: Tests/TestWorker.php
    :language: php
    :linenos:
 

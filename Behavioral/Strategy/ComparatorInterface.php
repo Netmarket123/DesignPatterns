@@ -2,13 +2,16 @@
 
 namespace DesignPatterns\Behavioral\Strategy;
 
+/**
+ * Class ComparatorInterface.
+ */
 interface ComparatorInterface
 {
     /**
      * @param mixed $a
      * @param mixed $b
      *
-     * @return int
+     * @return bool
      */
-    public function compare($a, $b): int;
+    public function compare($a, $b);
 }

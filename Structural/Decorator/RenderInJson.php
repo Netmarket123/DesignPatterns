@@ -2,6 +2,9 @@
 
 namespace DesignPatterns\Structural\Decorator;
 
+/**
+ * Class RenderInJson.
+ */
 class RenderInJson extends Decorator
 {
     /**

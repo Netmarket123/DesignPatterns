@@ -28,7 +28,7 @@ Code
 
 You can also find these code on `GitHub`_
 
-BookInterface.php
+PaperBookInterface.php
 
 .. literalinclude:: PaperBookInterface.php
    :language: php

@@ -31,9 +31,9 @@ RoleVisitorInterface.php
    :language: php
    :linenos:
 
-RoleVisitor.php
+RolePrintVisitor.php
 
-.. literalinclude:: RoleVisitor.php
+.. literalinclude:: RolePrintVisitor.php
    :language: php
    :linenos:
 

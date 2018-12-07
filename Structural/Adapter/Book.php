@@ -2,25 +2,22 @@
 
 namespace DesignPatterns\Structural\Adapter;
 
-class Book implements BookInterface
+/**
+ * Book is a concrete and standard paper book.
+ */
+class Book implements PaperBookInterface
 {
     /**
-     * @var int
+     * {@inheritdoc}
      */
-    private $page;
-
     public function open()
     {
-        $this->page = 1;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function turnPage()
     {
-        $this->page++;
-    }
-
-    public function getPage(): int
-    {
-        return $this->page;
     }
 }

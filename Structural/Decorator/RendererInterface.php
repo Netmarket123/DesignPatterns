@@ -2,6 +2,9 @@
 
 namespace DesignPatterns\Structural\Decorator;
 
+/**
+ * Class RendererInterface.
+ */
 interface RendererInterface
 {
     /**

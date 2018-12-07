@@ -2,6 +2,9 @@
 
 namespace DesignPatterns\Structural\Decorator;
 
+/**
+ * Class RenderInXml.
+ */
 class RenderInXml extends Decorator
 {
     /**
