@@ -1,9 +1,6 @@
 `Pool`__
 ========
 
-Purpose
--------
-
 The **object pool pattern** is a software creational design pattern that
 uses a set of initialized objects kept ready to use – a "pool" – rather
 than allocating and destroying them on demand. A client of the pool will
