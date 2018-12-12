@@ -43,11 +43,11 @@ Bicycle.php
 Usage
 -----
 
-Usage/SimpleFactoryUsage.php
+.. code::  php
 
-.. literalinclude:: Usage/SimpleFactoryUsage.php
-   :language: php
-   :linenos:
+   $factory = new SimpleFactory();
+   $bicycle = $factory->createBicycle();
+   $bicycle->driveTo('Paris');
 
 Test
 ----
