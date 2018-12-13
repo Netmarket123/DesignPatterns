@@ -1,6 +1,6 @@
 <?php
 
-namespace DesignPatterns\Creational\Prototype\Tests;
+namespace DesignPatterns\Creational\Pool\Tests;
 
 use DesignPatterns\Creational\Prototype\BarBookPrototype;
 use DesignPatterns\Creational\Prototype\FooBookPrototype;
