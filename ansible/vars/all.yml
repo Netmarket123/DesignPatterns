@@ -1,35 +1,15 @@
 ---
 server:
     install: '1'
-    packages:
-      - vim
-      - htop
-      - iotop
-      - bwm-ng
-      - git
+    packages: [vim, htop, iotop, bwm-ng]
     timezone: UTC
     locale: en_US.UTF-8
-
 vagrant_local:
     install: '1'
-    vm:
-        hostname: design-patterns
-
+    vm: { base_box: trusty64, hostname: design-patterns, ip: 192.168.11.2, sharedfolder: ./, enableWindows: '1', useVagrantCloud: '1', syncType: nfs }
 php:
     install: '1'
     ppa: php
-    packages:
-      - php7.0-cli
-      - php7.0-intl
-      - php7.0-mcrypt
-      - php7.0-mysql
-      - php7.0-curl
-      - php7.0-json
-      - php7.0-xml
-      - php7.0-mbstring
-
+    packages: [php7.0-cli, php7.0-intl, php7.0-mcrypt, php7.0-mysql, php7.0-curl, php7.0-json, php7.0-xml]
 xdebug:
     install: '1'
-
-composer:
-    timeout: 2400
