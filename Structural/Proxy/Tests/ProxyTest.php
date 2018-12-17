@@ -2,6 +2,7 @@
 
 namespace DesignPatterns\Structural\Proxy\Tests;
 
+use DesignPatterns\Structural\Decorator;
 use DesignPatterns\Structural\Proxy\RecordProxy;
 
 class ProxyTest extends \PHPUnit_Framework_TestCase
@@ -19,6 +20,6 @@ class ProxyTest extends \PHPUnit_Framework_TestCase
         $recordProxy = new RecordProxy([]);
         $recordProxy->username = 'baz';
 
-        $this->assertInstanceOf(RecordProxy::class, $recordProxy);
+        $this->assertInstanceOf('DesignPatterns\Structural\Proxy\Record', $recordProxy);
     }
 }

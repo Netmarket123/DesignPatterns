@@ -2,9 +2,6 @@
 
 namespace DesignPatterns\Creational\FactoryMethod\Tests;
 
-use DesignPatterns\Creational\FactoryMethod\Bicycle;
-use DesignPatterns\Creational\FactoryMethod\CarFerrari;
-use DesignPatterns\Creational\FactoryMethod\CarMercedes;
 use DesignPatterns\Creational\FactoryMethod\FactoryMethod;
 use DesignPatterns\Creational\FactoryMethod\GermanFactory;
 use DesignPatterns\Creational\FactoryMethod\ItalianFactory;
@@ -16,7 +13,7 @@ class FactoryMethodTest extends \PHPUnit_Framework_TestCase
         $factory = new GermanFactory();
         $result = $factory->create(FactoryMethod::CHEAP);
 
-        $this->assertInstanceOf(Bicycle::class, $result);
+        $this->assertInstanceOf('DesignPatterns\Creational\FactoryMethod\Bicycle', $result);
     }
 
     public function testCanCreateFastVehicleInGermany()
@@ -24,7 +21,7 @@ class FactoryMethodTest extends \PHPUnit_Framework_TestCase
         $factory = new GermanFactory();
         $result = $factory->create(FactoryMethod::FAST);
 
-        $this->assertInstanceOf(CarMercedes::class, $result);
+        $this->assertInstanceOf('DesignPatterns\Creational\FactoryMethod\CarMercedes', $result);
     }
 
     public function testCanCreateCheapVehicleInItaly()
@@ -32,7 +29,7 @@ class FactoryMethodTest extends \PHPUnit_Framework_TestCase
         $factory = new ItalianFactory();
         $result = $factory->create(FactoryMethod::CHEAP);
 
-        $this->assertInstanceOf(Bicycle::class, $result);
+        $this->assertInstanceOf('DesignPatterns\Creational\FactoryMethod\Bicycle', $result);
     }
 
     public function testCanCreateFastVehicleInItaly()
@@ -40,7 +37,7 @@ class FactoryMethodTest extends \PHPUnit_Framework_TestCase
         $factory = new ItalianFactory();
         $result = $factory->create(FactoryMethod::FAST);
 
-        $this->assertInstanceOf(CarFerrari::class, $result);
+        $this->assertInstanceOf('DesignPatterns\Creational\FactoryMethod\CarFerrari', $result);
     }
 
     /**

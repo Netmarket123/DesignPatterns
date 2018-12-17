@@ -3,9 +3,7 @@
 namespace DesignPatterns\Creational\AbstractFactory\Tests;
 
 use DesignPatterns\Creational\AbstractFactory\HtmlFactory;
-use DesignPatterns\Creational\AbstractFactory\HtmlText;
 use DesignPatterns\Creational\AbstractFactory\JsonFactory;
-use DesignPatterns\Creational\AbstractFactory\JsonText;
 
 class AbstractFactoryTest extends \PHPUnit_Framework_TestCase
 {
@@ -14,7 +12,7 @@ class AbstractFactoryTest extends \PHPUnit_Framework_TestCase
         $factory = new HtmlFactory();
         $text = $factory->createText('foobar');
 
-        $this->assertInstanceOf(HtmlText::class, $text);
+        $this->assertInstanceOf('DesignPatterns\Creational\AbstractFactory\HtmlText', $text);
     }
 
     public function testCanCreateJsonText()
@@ -22,6 +20,6 @@ class AbstractFactoryTest extends \PHPUnit_Framework_TestCase
         $factory = new JsonFactory();
         $text = $factory->createText('foobar');
 
-        $this->assertInstanceOf(JsonText::class, $text);
+        $this->assertInstanceOf('DesignPatterns\Creational\AbstractFactory\JsonText', $text);
     }
 }
