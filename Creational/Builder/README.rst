@@ -30,7 +30,7 @@ UML Diagram
 Code
 ----
 
-You can also find this code on `GitHub`_
+You can also find these code on `GitHub`_
 
 Director.php
 
@@ -44,9 +44,9 @@ BuilderInterface.php
    :language: php
    :linenos:
 
-TruckBuilder.php
+BikeBuilder.php
 
-.. literalinclude:: TruckBuilder.php
+.. literalinclude:: BikeBuilder.php
    :language: php
    :linenos:
 
@@ -62,9 +62,9 @@ Parts/Vehicle.php
    :language: php
    :linenos:
 
-Parts/Truck.php
+Parts/Bike.php
 
-.. literalinclude:: Parts/Truck.php
+.. literalinclude:: Parts/Bike.php
    :language: php
    :linenos:
 

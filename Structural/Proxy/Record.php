@@ -3,38 +3,49 @@
 namespace DesignPatterns\Structural\Proxy;
 
 /**
- * @property string username
+ * class Record.
  */
 class Record
 {
     /**
-     * @var string[]
+     * @var array|null
      */
-    private $data;
+    protected $data;
 
     /**
-     * @param string[] $data
+     * @param null $data
      */
-    public function __construct(array $data = [])
+    public function __construct($data = null)
     {
-        $this->data = $data;
+        $this->data = (array) $data;
     }
 
     /**
+     * magic setter.
+     *
      * @param string $name
-     * @param string  $value
+     * @param mixed  $value
+     *
+     * @return void
      */
-    public function __set(string $name, string $value)
+    public function __set($name, $value)
     {
-        $this->data[$name] = $value;
+        $this->data[(string) $name] = $value;
     }
 
-    public function __get(string $name): string
+    /**
+     * magic getter.
+     *
+     * @param string $name
+     *
+     * @return mixed|null
+     */
+    public function __get($name)
     {
-        if (!isset($this->data[$name])) {
-            throw new \OutOfRangeException('Invalid name given');
+        if (array_key_exists($name, $this->data)) {
+            return $this->data[(string) $name];
+        } else {
+            return;
         }
-
-        return $this->data[$name];
     }
 }

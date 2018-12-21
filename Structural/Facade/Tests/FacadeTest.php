@@ -2,35 +2,47 @@
 
 namespace DesignPatterns\Structural\Facade\Tests;
 
-use DesignPatterns\Structural\Facade\Facade;
+use DesignPatterns\Structural\Facade\Facade as Computer;
 use DesignPatterns\Structural\Facade\OsInterface;
-use PHPUnit\Framework\TestCase;
 
-class FacadeTest extends TestCase
+/**
+ * FacadeTest shows example of facades.
+ */
+class FacadeTest extends \PHPUnit_Framework_TestCase
 {
-    public function testComputerOn()
+    public function getComputer()
     {
-        /** @var OsInterface|\PHPUnit_Framework_MockObject_MockObject $os */
-        $os = $this->createMock('DesignPatterns\Structural\Facade\OsInterface');
-
-        $os->method('getName')
-            ->will($this->returnValue('Linux'));
-
         $bios = $this->getMockBuilder('DesignPatterns\Structural\Facade\BiosInterface')
-            ->setMethods(['launch', 'execute', 'waitForKeyPress'])
-            ->disableAutoload()
-            ->getMock();
-
+                ->setMethods(array('launch', 'execute', 'waitForKeyPress'))
+                ->disableAutoload()
+                ->getMock();
+        $operatingSys = $this->getMockBuilder('DesignPatterns\Structural\Facade\OsInterface')
+                ->setMethods(array('getName'))
+                ->disableAutoload()
+                ->getMock();
         $bios->expects($this->once())
-            ->method('launch')
-            ->with($os);
+                ->method('launch')
+                ->with($operatingSys);
+        $operatingSys
+                ->expects($this->once())
+                ->method('getName')
+                ->will($this->returnValue('Linux'));
 
-        $facade = new Facade($bios, $os);
+        $facade = new Computer($bios, $operatingSys);
 
-        // the facade interface is simple
+        return array(array($facade, $operatingSys));
+    }
+
+    /**
+     * @param Computer    $facade
+     * @param OsInterface $os
+     * @dataProvider getComputer
+     */
+    public function testComputerOn(Computer $facade, OsInterface $os)
+    {
+        // interface is simpler :
         $facade->turnOn();
-
-        // but you can also access the underlying components
+        // but I can access to lower component
         $this->assertEquals('Linux', $os->getName());
     }
 }

@@ -2,6 +2,9 @@
 
 namespace DesignPatterns\Creational\Prototype;
 
+/**
+ * Class BarBookPrototype.
+ */
 class BarBookPrototype extends BookPrototype
 {
     /**
@@ -9,6 +12,9 @@ class BarBookPrototype extends BookPrototype
      */
     protected $category = 'Bar';
 
+    /**
+     * empty clone.
+     */
     public function __clone()
     {
     }

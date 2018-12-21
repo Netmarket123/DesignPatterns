@@ -2,7 +2,13 @@
 
 namespace DesignPatterns\Structural\Flyweight;
 
+/**
+ * An interface through which flyweights can receive and act on extrinsic state.
+ */
 interface FlyweightInterface
 {
-    public function render(string $extrinsicState): string;
+    /**
+     * @param string $extrinsicState
+     */
+    public function draw($extrinsicState);
 }

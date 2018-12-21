@@ -26,11 +26,11 @@ UML Diagram
 Code
 ----
 
-You can also find this code on `GitHub`_
+You can also find these code on `GitHub`_
 
-BookInterface.php
+PaperBookInterface.php
 
-.. literalinclude:: BookInterface.php
+.. literalinclude:: PaperBookInterface.php
    :language: php
    :linenos:
 

@@ -3,26 +3,33 @@
 namespace DesignPatterns\Structural\Composite\Tests;
 
 use DesignPatterns\Structural\Composite;
-use PHPUnit\Framework\TestCase;
 
-class CompositeTest extends TestCase
+/**
+ * FormTest tests the composite pattern on Form.
+ */
+class CompositeTest extends \PHPUnit_Framework_TestCase
 {
     public function testRender()
     {
         $form = new Composite\Form();
-        $form->addElement(new Composite\TextElement('Email:'));
+        $form->addElement(new Composite\TextElement());
         $form->addElement(new Composite\InputElement());
         $embed = new Composite\Form();
-        $embed->addElement(new Composite\TextElement('Password:'));
+        $embed->addElement(new Composite\TextElement());
         $embed->addElement(new Composite\InputElement());
-        $form->addElement($embed);
+        $form->addElement($embed);  // here we have a embedded form (like SF2 does)
 
-        // This is just an example, in a real world scenario it is important to remember that web browsers do not
-        // currently support nested forms
+        $this->assertRegExp('#^\s{4}#m', $form->render());
+    }
 
-        $this->assertEquals(
-            '<form>Email:<input type="text" /><form>Password:<input type="text" /></form></form>',
-            $form->render()
-        );
+    /**
+     * The point of this pattern, a Composite must inherit from the node
+     * if you want to build trees.
+     */
+    public function testFormImplementsFormEelement()
+    {
+        $className = 'DesignPatterns\Structural\Composite\Form';
+        $abstractName = 'DesignPatterns\Structural\Composite\FormElement';
+        $this->assertTrue(is_subclass_of($className, $abstractName));
     }
 }

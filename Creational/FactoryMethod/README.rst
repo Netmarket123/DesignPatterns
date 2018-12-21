@@ -26,7 +26,7 @@ UML Diagram
 Code
 ----
 
-You can also find this code on `GitHub`_
+You can also find these code on `GitHub`_
 
 FactoryMethod.php
 
@@ -52,21 +52,21 @@ VehicleInterface.php
    :language: php
    :linenos:
 
-CarMercedes.php
+Porsche.php
 
-.. literalinclude:: CarMercedes.php
-   :language: php
-   :linenos:
-
-CarFerrari.php
-
-.. literalinclude:: CarFerrari.php
+.. literalinclude:: Porsche.php
    :language: php
    :linenos:
 
 Bicycle.php
 
 .. literalinclude:: Bicycle.php
+   :language: php
+   :linenos:
+
+Ferrari.php
+
+.. literalinclude:: Ferrari.php
    :language: php
    :linenos:
 

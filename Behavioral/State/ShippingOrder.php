@@ -2,15 +2,49 @@
 
 namespace DesignPatterns\Behavioral\State;
 
-class ShippingOrder extends StateOrder
+/**
+ * Class ShippingOrder.
+ */
+class ShippingOrder implements OrderInterface
 {
-    public function __construct()
+    /**
+     * @var array
+     */
+    private $order;
+
+    /**
+     * @param array $order
+     *
+     * @throws \Exception
+     */
+    public function __construct(array $order)
     {
-        $this->setStatus('shipping');
+        if (empty($order)) {
+            throw new \Exception('Order can not be empty!');
+        }
+        $this->order = $order;
     }
 
-    protected function done()
+    /**
+     * @throws \Exception
+     *
+     * @return mixed|void
+     */
+    public function shipOrder()
     {
-        $this->setStatus('completed');
+        //Can not ship the order which status is shipping, throw exception;
+        throw new \Exception('Can not ship the order which status is shipping!');
+    }
+
+    /**
+     * @return mixed
+     */
+    public function completeOrder()
+    {
+        $this->order['status'] = 'completed';
+        $this->order['updatedTime'] = time();
+
+        // Setting the new order status into database;
+        return $this->updateOrder($this->order);
     }
 }

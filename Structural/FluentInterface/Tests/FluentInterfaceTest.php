@@ -3,17 +3,20 @@
 namespace DesignPatterns\Structural\FluentInterface\Tests;
 
 use DesignPatterns\Structural\FluentInterface\Sql;
-use PHPUnit\Framework\TestCase;
 
-class FluentInterfaceTest extends TestCase
+/**
+ * FluentInterfaceTest tests the fluent interface SQL.
+ */
+class FluentInterfaceTest extends \PHPUnit_Framework_TestCase
 {
     public function testBuildSQL()
     {
-        $query = (new Sql())
-                ->select(['foo', 'bar'])
+        $instance = new Sql();
+        $query = $instance->select(array('foo', 'bar'))
                 ->from('foobar', 'f')
-                ->where('f.bar = ?');
+                ->where('f.bar = ?')
+                ->getQuery();
 
-        $this->assertEquals('SELECT foo, bar FROM foobar AS f WHERE f.bar = ?', (string) $query);
+        $this->assertEquals('SELECT foo,bar FROM foobar AS f WHERE f.bar = ?', $query);
     }
 }

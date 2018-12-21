@@ -18,17 +18,23 @@ UML Diagram
 Code
 ----
 
-You can also find this code on `GitHub`_
+You can also find these code on `GitHub`_
 
-ContextOrder.php
+OrderController.php
 
-.. literalinclude:: ContextOrder.php
+.. literalinclude:: OrderController.php
    :language: php
    :linenos:
 
-StateOrder.php
+OrderFactory.php
 
-.. literalinclude:: StateOrder.php
+.. literalinclude:: OrderFactory.php
+   :language: php
+   :linenos:
+
+OrderInterface.php
+
+.. literalinclude:: OrderInterface.php
    :language: php
    :linenos:
 

@@ -5,16 +5,24 @@ namespace DesignPatterns\Behavioral\Mediator\Subsystem;
 use DesignPatterns\Behavioral\Mediator\Colleague;
 
 /**
- * Client is a client that makes requests and gets the response.
+ * Client is a client that make request et get response.
  */
 class Client extends Colleague
 {
+    /**
+     * request.
+     */
     public function request()
     {
-        $this->mediator->makeRequest();
+        $this->getMediator()->makeRequest();
     }
 
-    public function output(string $content)
+    /**
+     * output content.
+     *
+     * @param string $content
+     */
+    public function output($content)
     {
         echo $content;
     }

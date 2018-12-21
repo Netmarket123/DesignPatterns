@@ -2,27 +2,43 @@
 
 namespace DesignPatterns\Creational\AbstractFactory\Tests;
 
+use DesignPatterns\Creational\AbstractFactory\AbstractFactory;
 use DesignPatterns\Creational\AbstractFactory\HtmlFactory;
-use DesignPatterns\Creational\AbstractFactory\HtmlText;
 use DesignPatterns\Creational\AbstractFactory\JsonFactory;
-use DesignPatterns\Creational\AbstractFactory\JsonText;
-use PHPUnit\Framework\TestCase;
 
-class AbstractFactoryTest extends TestCase
+/**
+ * AbstractFactoryTest tests concrete factories.
+ */
+class AbstractFactoryTest extends \PHPUnit_Framework_TestCase
 {
-    public function testCanCreateHtmlText()
+    public function getFactories()
     {
-        $factory = new HtmlFactory();
-        $text = $factory->createText('foobar');
-
-        $this->assertInstanceOf(HtmlText::class, $text);
+        return array(
+            array(new JsonFactory()),
+            array(new HtmlFactory()),
+        );
     }
 
-    public function testCanCreateJsonText()
+    /**
+     * This is the client of factories. Note that the client does not
+     * care which factory is given to him, he can create any component he
+     * wants and render how he wants.
+     *
+     * @dataProvider getFactories
+     */
+    public function testComponentCreation(AbstractFactory $factory)
     {
-        $factory = new JsonFactory();
-        $text = $factory->createText('foobar');
+        $article = array(
+            $factory->createText('Lorem Ipsum'),
+            $factory->createPicture('/image.jpg', 'caption'),
+            $factory->createText('footnotes'),
+        );
 
-        $this->assertInstanceOf(JsonText::class, $text);
+        $this->assertContainsOnly('DesignPatterns\Creational\AbstractFactory\MediaInterface', $article);
+
+        /* this is the time to look at the Builder pattern. This pattern
+         * helps you to create complex object like that article above with
+         * a given Abstract Factory
+         */
     }
 }

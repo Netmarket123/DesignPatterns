@@ -10,10 +10,17 @@ testable, maintainable and extendable code.
 Usage
 -----
 
-DatabaseConfiguration gets injected and ``DatabaseConnection`` will get all that it
+Configuration gets injected and ``Connection`` will get all that it
 needs from ``$config``. Without DI, the configuration would be created
-directly in ``DatabaseConnection``, which is not very good for testing and
-extending it.
+directly in ``Connection``, which is not very good for testing and
+extending ``Connection``.
+
+Notice we are following Inversion of control principle in ``Connection``
+by asking ``$config`` to implement ``Parameters`` interface. This
+decouples our components. We don't care where the source of information
+comes from, we only care that ``$config`` has certain methods to
+retrieve that information. Read more about Inversion of control
+`here <http://en.wikipedia.org/wiki/Inversion_of_control>`__.
 
 Examples
 --------
@@ -36,17 +43,29 @@ UML Diagram
 Code
 ----
 
-You can also find this code on `GitHub`_
+You can also find these code on `GitHub`_
 
-DatabaseConfiguration.php
+AbstractConfig.php
 
-.. literalinclude:: DatabaseConfiguration.php
+.. literalinclude:: AbstractConfig.php
    :language: php
    :linenos:
 
-DatabaseConnection.php
+Parameters.php
 
-.. literalinclude:: DatabaseConnection.php
+.. literalinclude:: Parameters.php
+   :language: php
+   :linenos:
+
+ArrayConfig.php
+
+.. literalinclude:: ArrayConfig.php
+   :language: php
+   :linenos:
+
+Connection.php
+
+.. literalinclude:: Connection.php
    :language: php
    :linenos:
 
@@ -56,6 +75,12 @@ Test
 Tests/DependencyInjectionTest.php
 
 .. literalinclude:: Tests/DependencyInjectionTest.php
+   :language: php
+   :linenos:
+
+Tests/config.php
+
+.. literalinclude:: Tests/config.php
    :language: php
    :linenos:
 

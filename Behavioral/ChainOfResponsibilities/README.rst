@@ -31,7 +31,13 @@ UML Diagram
 Code
 ----
 
-You can also find this code on `GitHub`_
+You can also find these code on `GitHub`_
+
+Request.php
+
+.. literalinclude:: Request.php
+   :language: php
+   :linenos:
 
 Handler.php
 

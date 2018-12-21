@@ -2,51 +2,79 @@
 
 namespace DesignPatterns\Structural\FluentInterface;
 
+/**
+ * class SQL.
+ */
 class Sql
 {
     /**
      * @var array
      */
-    private $fields = [];
+    protected $fields = array();
 
     /**
      * @var array
      */
-    private $from = [];
+    protected $from = array();
 
     /**
      * @var array
      */
-    private $where = [];
+    protected $where = array();
 
-    public function select(array $fields): Sql
+    /**
+     * adds select fields.
+     *
+     * @param array $fields
+     *
+     * @return SQL
+     */
+    public function select(array $fields = array())
     {
         $this->fields = $fields;
 
         return $this;
     }
 
-    public function from(string $table, string $alias): Sql
+    /**
+     * adds a FROM clause.
+     *
+     * @param string $table
+     * @param string $alias
+     *
+     * @return SQL
+     */
+    public function from($table, $alias)
     {
         $this->from[] = $table.' AS '.$alias;
 
         return $this;
     }
 
-    public function where(string $condition): Sql
+    /**
+     * adds a WHERE condition.
+     *
+     * @param string $condition
+     *
+     * @return SQL
+     */
+    public function where($condition)
     {
         $this->where[] = $condition;
 
         return $this;
     }
 
-    public function __toString(): string
+    /**
+     * Gets the query, just an example of building a query,
+     * no check on consistency.
+     *
+     * @return string
+     */
+    public function getQuery()
     {
-        return sprintf(
-            'SELECT %s FROM %s WHERE %s',
-            join(', ', $this->fields),
-            join(', ', $this->from),
-            join(' AND ', $this->where)
-        );
+        return 'SELECT '.implode(',', $this->fields)
+                .' FROM '.implode(',', $this->from)
+                .' WHERE '.implode(' AND ', $this->where);
     }
 }

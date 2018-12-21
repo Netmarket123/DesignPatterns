@@ -2,10 +2,16 @@
 
 namespace DesignPatterns\Behavioral\TemplateMethod;
 
+/**
+ * BeachJourney is vacation at the beach.
+ */
 class BeachJourney extends Journey
 {
-    protected function enjoyVacation(): string
+    /**
+     * prints what to do to enjoy your vacation.
+     */
+    protected function enjoyVacation()
     {
-        return "Swimming and sun-bathing";
+        echo "Swimming and sun-bathing\n";
     }
 }

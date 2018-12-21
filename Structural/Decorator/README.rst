@@ -23,11 +23,11 @@ UML Diagram
 Code
 ----
 
-You can also find this code on `GitHub`_
+You can also find these code on `GitHub`_
 
-RenderableInterface.php
+RendererInterface.php
 
-.. literalinclude:: RenderableInterface.php
+.. literalinclude:: RendererInterface.php
    :language: php
    :linenos:
 
@@ -37,21 +37,21 @@ Webservice.php
    :language: php
    :linenos:
 
-RendererDecorator.php
+Decorator.php
 
-.. literalinclude:: RendererDecorator.php
+.. literalinclude:: Decorator.php
    :language: php
    :linenos:
 
-XmlRenderer.php
+RenderInXml.php
 
-.. literalinclude:: XmlRenderer.php
+.. literalinclude:: RenderInXml.php
    :language: php
    :linenos:
 
-JsonRenderer.php
+RenderInJson.php
 
-.. literalinclude:: JsonRenderer.php
+.. literalinclude:: RenderInJson.php
    :language: php
    :linenos:
 

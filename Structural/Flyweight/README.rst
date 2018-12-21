@@ -12,13 +12,13 @@ UML Diagram
 -----------
 
 .. image:: uml/uml.png
-   :alt: Alt Flyweight UML Diagram
+   :alt: Alt Facade UML Diagram
    :align: center
 
 Code
 ----
 
-You can also find this code on `GitHub`_
+You can also find these code on `GitHub`_
 
 FlyweightInterface.php
 

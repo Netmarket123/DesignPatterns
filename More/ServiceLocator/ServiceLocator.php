@@ -2,87 +2,104 @@
 
 namespace DesignPatterns\More\ServiceLocator;
 
-class ServiceLocator
+class ServiceLocator implements ServiceLocatorInterface
 {
     /**
-     * @var array
-     */
-    private $services = [];
-
-    /**
-     * @var array
-     */
-    private $instantiated = [];
-
-    /**
-     * @var array
-     */
-    private $shared = [];
-
-    /**
-     * instead of supplying a class here, you could also store a service for an interface
+     * All services.
      *
-     * @param string $class
-     * @param object $service
-     * @param bool $share
+     * @var array
      */
-    public function addInstance(string $class, $service, bool $share = true)
+    private $services;
+
+    /**
+     * The services which have an instance.
+     *
+     * @var array
+     */
+    private $instantiated;
+
+    /**
+     * True if a service can be shared.
+     *
+     * @var array
+     */
+    private $shared;
+
+    public function __construct()
     {
-        $this->services[$class] = $service;
-        $this->instantiated[$class] = $service;
-        $this->shared[$class] = $share;
+        $this->services = array();
+        $this->instantiated = array();
+        $this->shared = array();
     }
 
     /**
-     * instead of supplying a class here, you could also store a service for an interface
+     * Registers a service with specific interface.
      *
-     * @param string $class
-     * @param array $params
-     * @param bool $share
+     * @param string        $interface
+     * @param string|object $service
+     * @param bool          $share
      */
-    public function addClass(string $class, array $params, bool $share = true)
+    public function add($interface, $service, $share = true)
     {
-        $this->services[$class] = $params;
-        $this->shared[$class] = $share;
+        /*
+         * When you add a service, you should register it
+         * with its interface or with a string that you can use
+         * in the future even if you will change the service implementation.
+         */
+
+        if (is_object($service) && $share) {
+            $this->instantiated[$interface] = $service;
+        }
+        $this->services[$interface] = (is_object($service) ? get_class($service) : $service);
+        $this->shared[$interface] = $share;
     }
 
-    public function has(string $interface): bool
+    /**
+     * Checks if a service is registered.
+     *
+     * @param string $interface
+     *
+     * @return bool
+     */
+    public function has($interface)
     {
         return isset($this->services[$interface]) || isset($this->instantiated[$interface]);
     }
 
     /**
-     * @param string $class
+     * Gets the service registered for the interface.
      *
-     * @return object
+     * @param string $interface
+     *
+     * @return mixed
      */
-    public function get(string $class)
+    public function get($interface)
     {
-        if (isset($this->instantiated[$class]) && $this->shared[$class]) {
-            return $this->instantiated[$class];
+        // Retrieves the instance if it exists and it is shared
+        if (isset($this->instantiated[$interface]) && $this->shared[$interface]) {
+            return $this->instantiated[$interface];
         }
 
-        $args = $this->services[$class];
+        // otherwise gets the service registered.
+        $service = $this->services[$interface];
 
-        switch (count($args)) {
-            case 0:
-                $object = new $class();
-                break;
-            case 1:
-                $object = new $class($args[0]);
-                break;
-            case 2:
-                $object = new $class($args[0], $args[1]);
-                break;
-            case 3:
-                $object = new $class($args[0], $args[1], $args[2]);
-                break;
-            default:
-                throw new \OutOfRangeException('Too many arguments given');
-        }
+        // You should check if the service class exists and
+        // the class is instantiable.
 
-        if ($this->shared[$class]) {
-            $this->instantiated[$class] = $object;
+        // This example is a simple implementation, but
+        // when you create a service, you can decide
+        // if $service is a factory or a class.
+        // By registering a factory you can create your services
+        // using the DependencyInjection pattern.
+
+        // ...
+
+        // Creates the service object
+        $object = new $service();
+
+        // and saves it if the service must be shared.
+        if ($this->shared[$interface]) {
+            $this->instantiated[$interface] = $object;
         }
 
         return $object;

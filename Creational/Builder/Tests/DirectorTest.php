@@ -2,28 +2,40 @@
 
 namespace DesignPatterns\Creational\Builder\Tests;
 
-use DesignPatterns\Creational\Builder\Parts\Car;
-use DesignPatterns\Creational\Builder\Parts\Truck;
-use DesignPatterns\Creational\Builder\TruckBuilder;
+use DesignPatterns\Creational\Builder\BikeBuilder;
+use DesignPatterns\Creational\Builder\BuilderInterface;
 use DesignPatterns\Creational\Builder\CarBuilder;
 use DesignPatterns\Creational\Builder\Director;
-use PHPUnit\Framework\TestCase;
 
-class DirectorTest extends TestCase
+/**
+ * DirectorTest tests the builder pattern.
+ */
+class DirectorTest extends \PHPUnit_Framework_TestCase
 {
-    public function testCanBuildTruck()
-    {
-        $truckBuilder = new TruckBuilder();
-        $newVehicle = (new Director())->build($truckBuilder);
+    protected $director;
 
-        $this->assertInstanceOf(Truck::class, $newVehicle);
+    protected function setUp()
+    {
+        $this->director = new Director();
     }
 
-    public function testCanBuildCar()
+    public function getBuilder()
     {
-        $carBuilder = new CarBuilder();
-        $newVehicle = (new Director())->build($carBuilder);
+        return array(
+            array(new CarBuilder()),
+            array(new BikeBuilder()),
+        );
+    }
 
-        $this->assertInstanceOf(Car::class, $newVehicle);
+    /**
+     * Here we test the build process. Notice that the client don't know
+     * anything about the concrete builder.
+     *
+     * @dataProvider getBuilder
+     */
+    public function testBuild(BuilderInterface $builder)
+    {
+        $newVehicle = $this->director->build($builder);
+        $this->assertInstanceOf('DesignPatterns\Creational\Builder\Parts\Vehicle', $newVehicle);
     }
 }
