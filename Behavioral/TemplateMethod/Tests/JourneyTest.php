@@ -12,7 +12,7 @@ class JourneyTest extends TestCase
         $beachJourney = new TemplateMethod\BeachJourney();
         $beachJourney->takeATrip();
 
-        $this->assertSame(
+        $this->assertEquals(
             ['Buy a flight ticket', 'Taking the plane', 'Swimming and sun-bathing', 'Taking the plane'],
             $beachJourney->getThingsToDo()
         );
@@ -23,7 +23,7 @@ class JourneyTest extends TestCase
         $beachJourney = new TemplateMethod\CityJourney();
         $beachJourney->takeATrip();
 
-        $this->assertSame(
+        $this->assertEquals(
             [
                 'Buy a flight ticket',
                 'Taking the plane',

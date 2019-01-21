@@ -16,6 +16,6 @@ class CommandTest extends TestCase
 
         $invoker->setCommand(new HelloCommand($receiver));
         $invoker->run();
-        $this->assertSame('Hello World', $receiver->getOutput());
+        $this->assertEquals('Hello World', $receiver->getOutput());
     }
 }

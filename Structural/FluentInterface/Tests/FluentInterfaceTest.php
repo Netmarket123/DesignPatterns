@@ -14,6 +14,6 @@ class FluentInterfaceTest extends TestCase
                 ->from('foobar', 'f')
                 ->where('f.bar = ?');
 
-        $this->assertSame('SELECT foo, bar FROM foobar AS f WHERE f.bar = ?', (string) $query);
+        $this->assertEquals('SELECT foo, bar FROM foobar AS f WHERE f.bar = ?', (string) $query);
     }
 }

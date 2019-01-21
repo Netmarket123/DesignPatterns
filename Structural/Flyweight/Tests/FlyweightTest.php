@@ -20,7 +20,7 @@ class FlyweightTest extends TestCase
                 $flyweight = $factory->get($char);
                 $rendered = $flyweight->render($font);
 
-                $this->assertSame(sprintf('Character %s with font %s', $char, $font), $rendered);
+                $this->assertEquals(sprintf('Character %s with font %s', $char, $font), $rendered);
             }
         }
 
