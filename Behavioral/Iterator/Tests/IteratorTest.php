@@ -21,7 +21,7 @@ class IteratorTest extends TestCase
             $books[] = $book->getAuthorAndTitle();
         }
 
-        $this->assertEquals(
+        $this->assertSame(
             [
                 'Learning PHP Design Patterns by William Sanders',
                 'Professional Php Design Patterns by Aaron Saray',
@@ -46,7 +46,7 @@ class IteratorTest extends TestCase
             $books[] = $book->getAuthorAndTitle();
         }
 
-        $this->assertEquals(
+        $this->assertSame(
             ['Professional Php Design Patterns by Aaron Saray'],
             $books
         );
