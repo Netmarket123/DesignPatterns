@@ -31,6 +31,6 @@ class FacadeTest extends TestCase
         $facade->turnOn();
 
         // but you can also access the underlying components
-        $this->assertSame('Linux', $os->getName());
+        $this->assertEquals('Linux', $os->getName());
     }
 }

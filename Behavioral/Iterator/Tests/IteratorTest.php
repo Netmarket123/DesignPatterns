@@ -4,6 +4,8 @@ namespace DesignPatterns\Behavioral\Iterator\Tests;
 
 use DesignPatterns\Behavioral\Iterator\Book;
 use DesignPatterns\Behavioral\Iterator\BookList;
+use DesignPatterns\Behavioral\Iterator\BookListIterator;
+use DesignPatterns\Behavioral\Iterator\BookListReverseIterator;
 use PHPUnit\Framework\TestCase;
 
 class IteratorTest extends TestCase
@@ -21,7 +23,7 @@ class IteratorTest extends TestCase
             $books[] = $book->getAuthorAndTitle();
         }
 
-        $this->assertSame(
+        $this->assertEquals(
             [
                 'Learning PHP Design Patterns by William Sanders',
                 'Professional Php Design Patterns by Aaron Saray',
@@ -46,7 +48,7 @@ class IteratorTest extends TestCase
             $books[] = $book->getAuthorAndTitle();
         }
 
-        $this->assertSame(
+        $this->assertEquals(
             ['Professional Php Design Patterns by Aaron Saray'],
             $books
         );
