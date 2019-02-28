@@ -7,7 +7,7 @@
 [Read the Docs of DesignPatternsPHP](http://designpatternsphp.readthedocs.org)
 or [Download as PDF/Epub](https://readthedocs.org/projects/designpatternsphp/downloads/)
 
-This is a collection of known design patterns and some sample codes on how to implement them in PHP. Every pattern has a small list of examples.
+This is a collection of known design patterns and some sample code how to implement them in PHP. Every pattern has a small list of examples.
 
 I think the problem with patterns is that often people do know them but don't know when to apply which.
 
@@ -27,7 +27,7 @@ To run the tests use `phpunit`:
 $ ./vendor/bin/phpunit
 ```
 
-## Using Docker (optional)
+## using Docker (optional)
 
 You can optionally build and browse the documentation using [Docker for Mac, Windows or Linux](https://docs.docker.com/compose/install/).
 
@@ -96,19 +96,19 @@ The patterns can be structured in roughly three different categories. Please cli
 * [Repository](More/Repository)
 * [ServiceLocator](More/ServiceLocator) [:notebook:](http://en.wikipedia.org/wiki/Service_locator_pattern)
 
-## Localization & Supported Languages
+## Localisation & Supported Languages
 
 | Code  | Language  |    Documentation   |
 | ------------------|-------------|------|
-| en    | English   | [Docs :notebook:](https://designpatternsphp.readthedocs.io/en/latest/README.html) |
 | ca    | Catalan   | [Docs :notebook:](https://designpatternsphp.readthedocs.io/ca/latest/README.html) |
-| de    | German    | [Docs :notebook:](https://designpatternsphp.readthedocs.io/de/latest/README.html) |
-| es    | Spanish   | [Docs :notebook:](https://designpatternsphp.readthedocs.io/es/latest/README.html) |
-| es_MX | Spanish-Mexican | [Docs :notebook:](https://designpatternsphp.readthedocs.io/es_MX/latest/README.html) |
-| ja    | Japanese  | [Docs :notebook:](https://designpatternsphp.readthedocs.io/ja/latest/README.html) |
+| zh_CN | Chinese   | [Docs :notebook:](https://designpatternsphp.readthedocs.io/zh_CN/latest/README.html) |
 | nl    | Dutch     | [Docs :notebook:](https://designpatternsphp.readthedocs.io/nl/latest/README.html) |
+| en    | English   | [Docs :notebook:](https://designpatternsphp.readthedocs.io/en/latest/README.html) |
+| de    | German    | [Docs :notebook:](https://designpatternsphp.readthedocs.io/de/latest/README.html) |
+| ja    | Japanese  | [Docs :notebook:](https://designpatternsphp.readthedocs.io/ja/latest/README.html) |
 | pl    | Polish    | [Docs :notebook:](https://designpatternsphp.readthedocs.io/pl/latest/README.html) |
 | pt_BR | Portuguese-Brazil | [Docs :notebook:](https://designpatternsphp.readthedocs.io/pt_BR/latest/README.html) |
 | ru    | Russian   | [Docs :notebook:](https://designpatternsphp.readthedocs.io/ru/latest/README.html) |
+| es    | Spanish   | [Docs :notebook:](https://designpatternsphp.readthedocs.io/es/latest/README.html) |
+| es_MX | Spanish-Mexican | [Docs :notebook:](https://designpatternsphp.readthedocs.io/es_MX/latest/README.html) |
 | tr    | Turkish   | [Docs :notebook:](https://designpatternsphp.readthedocs.io/tr/latest/README.html) |
-| zh_CN | Chinese   | [Docs :notebook:](https://designpatternsphp.readthedocs.io/zh_CN/latest/README.html) |
