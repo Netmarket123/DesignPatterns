@@ -37,7 +37,14 @@ Just run:
 $ docker-compose up --build
 ```
 
-Go to [http://localhost:8080/README.html](http://localhost:8080/README.html) to read the generated documentation.
+Go to [http://localhost:8080/](http://localhost:8080/) to read the generated documentation.
+
+If you want to localize your documentation you can pass the locale as an argument to the docker build:
+
+```bash
+$ docker-compose build --build-arg language=de
+$ docker-compose up
+```
 
 ## Patterns
 
@@ -99,6 +106,7 @@ The patterns can be structured in roughly three different categories. Please cli
 | es | Spanish | [Docs :notebook:](https://designpatternsphp.readthedocs.io/es/latest/README.html) |
 | es_MX | Spanish-Mexican | [Docs :notebook:](https://designpatternsphp.readthedocs.io/es_MX/latest/README.html) |
 | ja | Japanese | [Docs :notebook:](https://designpatternsphp.readthedocs.io/ja/latest/README.html) |
+| nl | Dutch | [Docs :notebook:](https://designpatternsphp.readthedocs.io/nl/latest/README.html) |
 | pl | Polish | [Docs :notebook:](https://designpatternsphp.readthedocs.io/pl/latest/README.html) |
 | pt_BR | Portuguese-Brazil | [Docs :notebook:](https://designpatternsphp.readthedocs.io/pt_BR/latest/README.html) |
 | ru | Russian | [Docs :notebook:](https://designpatternsphp.readthedocs.io/ru/latest/README.html) |
